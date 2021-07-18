@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <success>Always</success>
+        <xpath>Defs/JoyGiverDef[defName="WatchTelevision"]/thingDefs
+        </xpath>
+        <value>
+            <li>UltrascreenTV</li>
+        </value>
+    </Operation>
+
+</Patch>
