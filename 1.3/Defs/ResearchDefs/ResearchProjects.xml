@@ -1,0 +1,61 @@
+﻿<?Yml version="1.0" encoding="utf8" ?>
+<Defs>
+
+	<ResearchProjectDef>
+		<defName>SpacerFurniture</defName>
+		<label>spacer furniture</label>
+		<tab>VanillaExpanded</tab>
+		<description>Build advanced furniture usually only seen in advanced colonies and glitterworld buildings.</description>
+		<baseCost>1500</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+      <li>MultiAnalyzer</li>
+			<li>MF_ModernFurniture</li>
+		</prerequisites>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  <researchViewX>5.00</researchViewX>
+  <researchViewY>3.55</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>SpacerElectronics</defName>
+		<label>spacer electronics</label>
+		<tab>VanillaExpanded</tab>
+		<description>Build advanced electronics usually only seen in advanced colonies and glitterworld buildings.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+      <li>MultiAnalyzer</li>
+			<li>FlatscreenTelevision</li>
+		</prerequisites>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  <researchViewX>5.00</researchViewX>
+  <researchViewY>5.65</researchViewY>
+	</ResearchProjectDef>
+
+
+		<ResearchProjectDef>
+		<defName>MechaniteRestoration</defName>
+		<label>mechanite restoration</label>
+		<tab>VanillaExpanded</tab>
+		<description>Use ultratech mechanites to aid in restoration of objects by constructing a mechanite repair shelf.</description>
+		<baseCost>3000</baseCost>
+		<techLevel>Ultra</techLevel>
+		<prerequisites>
+			<li>SpacerElectronics</li>
+		</prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  <researchViewX>6.00</researchViewX>
+  <researchViewY>5.65</researchViewY>
+	</ResearchProjectDef>
+	
+</Defs>
