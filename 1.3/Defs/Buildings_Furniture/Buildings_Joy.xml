@@ -67,7 +67,7 @@
       <ComponentIndustrial>4</ComponentIndustrial>
       <ComponentSpacer>6</ComponentSpacer>
     </costList>
-    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
     <designationCategory>AOMorefurniture</designationCategory>
   </ThingDef>
 </Defs>
