@@ -28,11 +28,11 @@
       <li>RewardStandardQualitySuper</li>
     </thingSetMakerTags>
     <statBases>
-      <WorkToBuild>80000</WorkToBuild>
-      <MaxHitPoints>85</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-      <Mass>10</Mass>
-      <JoyGainFactor>1.6</JoyGainFactor>
+			<WorkToBuild>160000</WorkToBuild>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<Mass>16</Mass>
+			<JoyGainFactor>1.8</JoyGainFactor>
     </statBases>
     <pathCost>70</pathCost>
     <passability>PassThroughOnly</passability>
@@ -63,9 +63,9 @@
       <li>SpacerElectronics</li>
     </researchPrerequisites>
     <costList>
-      <Steel>120</Steel>
-      <ComponentIndustrial>4</ComponentIndustrial>
-      <ComponentSpacer>6</ComponentSpacer>
+			<Steel>300</Steel>
+			<ComponentIndustrial>16</ComponentIndustrial>
+			<ComponentSpacer>4</ComponentSpacer>
     </costList>
     <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
     <designationCategory>AOMorefurniture</designationCategory>
