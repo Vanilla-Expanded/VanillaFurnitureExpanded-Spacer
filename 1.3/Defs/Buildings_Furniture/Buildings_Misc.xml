@@ -140,9 +140,18 @@
         <filter>
           <categories>
             <li>Weapons</li>
+            <li>Apparel</li>
           </categories>
         </filter>
       </defaultStorageSettings>
+      <fixedStorageSettings>
+        <filter>
+          <categories>
+            <li>Weapons</li>
+            <li>Apparel</li>
+          </categories>
+        </filter>
+      </fixedStorageSettings>
     </building>
     <inspectorTabs>
       <li>ITab_Storage</li>
