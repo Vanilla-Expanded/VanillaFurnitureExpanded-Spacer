@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "LUZRKmhj17UGMzhivqB5hFfwfo+T/PmzrucfhI8IJ6SI7yEoPLVXt1MnHBy5vijx6Dk3zskb197Zs/+4eEUglg==",
+  "success": true,
+  "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Vanilla-Furniture-Expanded-Spacer\\1.3\\Source\\MFSpacer\\MFSpacer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kylia\\.nuget\\packages\\krafs.rimworld.ref\\1.3.3080\\krafs.rimworld.ref.1.3.3080.nupkg.sha512"
+  ],
+  "logs": []
+}
