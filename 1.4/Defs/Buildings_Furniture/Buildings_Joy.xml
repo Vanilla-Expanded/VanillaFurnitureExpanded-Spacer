@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>UltrascreenTV</defName>
+    <label>ultrascreen television</label>
+    <description>A huge, curved, ultra-tech television. Viewers feel as if they are part of the action themselves. Very entertaining. Capable of picking up signal from the core worlds.</description>
+    <graphicData>
+      <texPath>Things/Furniture/UltratechTV/UltratechTV</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shadowData>
+        <volume>(2.5, 0.6, 0.1)</volume>
+        <offset>(0, 0, 0.2)</offset>
+      </shadowData>
+      <drawSize>(4,2)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <rotatable>true</rotatable>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <fillPercent>0.35</fillPercent>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <thingCategories>
+      <li>BuildingsJoy</li>
+    </thingCategories>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
+    <statBases>
+			<WorkToBuild>160000</WorkToBuild>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<Mass>16</Mass>
+			<JoyGainFactor>1.8</JoyGainFactor>
+    </statBases>
+    <pathCost>70</pathCost>
+    <passability>PassThroughOnly</passability>
+    <size>(4,2)</size>
+    <building>
+      <joyKind>Television</joyKind>
+      <spawnedConceptLearnOpportunity>TVForSickPeople</spawnedConceptLearnOpportunity>
+      <boughtConceptLearnOpportunity>TVForSickPeople</boughtConceptLearnOpportunity>
+      <watchBuildingStandDistanceRange>2~9</watchBuildingStandDistanceRange>
+      <watchBuildingStandRectWidth>10</watchBuildingStandRectWidth>
+      <watchBuildingInSameRoom>true</watchBuildingInSameRoom>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_WatchArea</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>850</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+    <tradeTags>
+      <li>Television</li>
+    </tradeTags>
+    <researchPrerequisites>
+      <li>SpacerElectronics</li>
+    </researchPrerequisites>
+    <costList>
+			<Steel>300</Steel>
+			<ComponentIndustrial>16</ComponentIndustrial>
+			<ComponentSpacer>4</ComponentSpacer>
+    </costList>
+    <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+    <designationCategory>AOMorefurniture</designationCategory>
+  </ThingDef>
+</Defs>
