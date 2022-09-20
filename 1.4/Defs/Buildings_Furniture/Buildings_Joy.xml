@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <ThingDef ParentName="BuildingBase">
     <defName>UltrascreenTV</defName>
@@ -28,11 +28,11 @@
       <li>RewardStandardQualitySuper</li>
     </thingSetMakerTags>
     <statBases>
-			<WorkToBuild>160000</WorkToBuild>
-			<MaxHitPoints>100</MaxHitPoints>
-			<Flammability>1.0</Flammability>
-			<Mass>16</Mass>
-			<JoyGainFactor>1.8</JoyGainFactor>
+      <WorkToBuild>160000</WorkToBuild>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <Mass>16</Mass>
+      <JoyGainFactor>1.8</JoyGainFactor>
     </statBases>
     <pathCost>70</pathCost>
     <passability>PassThroughOnly</passability>
@@ -54,7 +54,7 @@
         <shortCircuitInRain>true</shortCircuitInRain>
         <basePowerConsumption>850</basePowerConsumption>
       </li>
-      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Flickable" />
     </comps>
     <tradeTags>
       <li>Television</li>
@@ -63,9 +63,9 @@
       <li>SpacerElectronics</li>
     </researchPrerequisites>
     <costList>
-			<Steel>300</Steel>
-			<ComponentIndustrial>16</ComponentIndustrial>
-			<ComponentSpacer>4</ComponentSpacer>
+      <Steel>300</Steel>
+      <ComponentIndustrial>16</ComponentIndustrial>
+      <ComponentSpacer>4</ComponentSpacer>
     </costList>
     <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
     <designationCategory>AOMorefurniture</designationCategory>

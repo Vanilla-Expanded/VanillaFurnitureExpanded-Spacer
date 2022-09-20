@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
   <ThingDef ParentName="BedWithQualityBase">
     <defName>Bed_AdvBed</defName>
     <label>advanced bed</label>

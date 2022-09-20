@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <ThingDef ParentName="ArtableFurnitureBase">
     <defName>Seat_AdvChair</defName>
@@ -7,7 +7,7 @@
     <graphicData>
       <texPath>Things/Furniture/AdvancedChair/AdvancedChair</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-	  <shaderType>CutoutComplex</shaderType>
+      <shaderType>CutoutComplex</shaderType>
       <drawSize>(1,1)</drawSize>
       <damageData>
         <rectN>(0.25,0.234375,0.5,0.28125)</rectN>
@@ -34,8 +34,8 @@
       <li>Woody</li>
     </stuffCategories>
     <costStuffCount>40</costStuffCount>
-	<costList>
-	  <Plasteel>60</Plasteel>
+    <costList>
+      <Plasteel>60</Plasteel>
       <ComponentIndustrial>3</ComponentIndustrial>
     </costList>
     <pathCost>30</pathCost>
@@ -48,7 +48,6 @@
     <researchPrerequisites>
       <li>SpacerFurniture</li>
     </researchPrerequisites>
-	<designationCategory>AOMorefurniture</designationCategory>
+    <designationCategory>AOMorefurniture</designationCategory>
   </ThingDef>
- 
 </Defs>

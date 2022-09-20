@@ -1,6 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
   <ThingDef ParentName="TableGatherSpotBase">
     <defName>Table_interactive_1x1c</defName>
     <label>interactive table (1x1)</label>
@@ -25,8 +24,8 @@
         <shortCircuitInRain>true</shortCircuitInRain>
         <basePowerConsumption>100</basePowerConsumption>
       </li>
-      <li Class="CompProperties_Breakdownable"/>
-      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Flickable" />
       <li Class="CompProperties_Glower">
         <glowRadius>1</glowRadius>
         <glowColor>(230,230,255,0)</glowColor>
@@ -53,7 +52,6 @@
     <designationCategory>AOMorefurniture</designationCategory>
   </ThingDef>
 
-
   <ThingDef ParentName="TableGatherSpotBase">
     <defName>Table_interactive_2x2c</defName>
     <label>interactive table (2x2)</label>
@@ -78,8 +76,8 @@
         <shortCircuitInRain>true</shortCircuitInRain>
         <basePowerConsumption>200</basePowerConsumption>
       </li>
-      <li Class="CompProperties_Breakdownable"/>
-      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Flickable" />
       <li Class="CompProperties_Glower">
         <glowRadius>1</glowRadius>
         <glowColor>(230,230,255,0)</glowColor>

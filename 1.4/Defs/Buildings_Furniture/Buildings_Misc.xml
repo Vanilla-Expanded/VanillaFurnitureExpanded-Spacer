@@ -1,6 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
   <ThingDef ParentName="LampBase">
     <defName>Spacer_SunLamp</defName>
     <label>biolab sun lamp</label>
@@ -42,8 +41,8 @@
         <heatPerSecond>42</heatPerSecond>
         <heatPushMaxTemperature>21</heatPushMaxTemperature>
       </li>
-      <li Class="CompProperties_Breakdownable"/>
-      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Flickable" />
     </comps>
     <specialDisplayRadius>7.8</specialDisplayRadius>
     <researchPrerequisites>
@@ -79,7 +78,7 @@
         <heatPerSecond>15</heatPerSecond>
         <heatPushMaxTemperature>15</heatPushMaxTemperature>
       </li>
-      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Flickable" />
       <li Class="CompProperties_Glower">
         <glowRadius>18</glowRadius>
         <glowColor>(370,370,340,0)</glowColor>
@@ -128,8 +127,8 @@
         <shortCircuitInRain>true</shortCircuitInRain>
         <basePowerConsumption>400</basePowerConsumption>
       </li>
-      <li Class="CompProperties_Breakdownable"/>
-      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Flickable" />
     </comps>
     <tickerType>Normal</tickerType>
     <building>
@@ -191,8 +190,8 @@
         <glowRadius>8</glowRadius>
         <glowColor>(370,370,340,0)</glowColor>
       </li>
-      <li Class="CompProperties_Breakdownable"/>
-      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Flickable" />
     </comps>
     <placeWorkers>
       <li>PlaceWorker_NotUnderRoof</li>

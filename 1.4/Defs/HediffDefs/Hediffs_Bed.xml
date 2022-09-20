@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
   <HediffDef>
     <defName>Bed_RefreshingSleep</defName>
     <label>refreshing Sleep</label>
@@ -52,5 +51,4 @@
       </li>
     </stages>
   </HediffDef>
-
 </Defs>
