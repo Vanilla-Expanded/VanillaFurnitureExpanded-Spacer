@@ -43,6 +43,7 @@
     <defaultPlacingRot>South</defaultPlacingRot>
     <building>
       <isSittable>true</isSittable>
+      <paintable>true</paintable>
     </building>
     <constructionSkillPrerequisite>7</constructionSkillPrerequisite>
     <researchPrerequisites>

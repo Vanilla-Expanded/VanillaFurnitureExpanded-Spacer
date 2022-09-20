@@ -55,6 +55,7 @@
     <building>
       <bed_showSleeperBody>false</bed_showSleeperBody>
       <bed_healPerDay>4</bed_healPerDay>
+      <paintable>true</paintable>
     </building>
     <fillPercent>0.4</fillPercent>
     <pathCost>60</pathCost>
@@ -124,6 +125,7 @@
     <building>
       <bed_showSleeperBody>false</bed_showSleeperBody>
       <bed_healPerDay>4</bed_healPerDay>
+      <paintable>true</paintable>
     </building>
     <fillPercent>0.4</fillPercent>
     <pathCost>60</pathCost>
@@ -195,6 +197,9 @@
     <castEdgeShadows>false</castEdgeShadows>
     <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
     <designationCategory>AOMorefurniture</designationCategory>
+    <building>
+      <paintable>true</paintable>
+    </building>
   </ThingDef>
 
   <ThingDef ParentName="ArtableFurnitureBase">
@@ -268,5 +273,8 @@
     </comps>
     <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
     <designationCategory>AOMorefurniture</designationCategory>
+    <building>
+      <paintable>true</paintable>
+    </building>
   </ThingDef>
 </Defs>

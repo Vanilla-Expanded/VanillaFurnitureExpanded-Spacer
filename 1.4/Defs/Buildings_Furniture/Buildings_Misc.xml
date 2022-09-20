@@ -117,7 +117,6 @@
     <defName>Spacer_OutdoorLamp</defName>
     <label>outdoor solar lamp</label>
     <description>A self sustained lamp for outdoor use, weaker than a normal industrial lamp but does not require any power, storing energy during the day to power itself 24/7. Will not short circuit in rain.</description>
-    <!-- <thingClass>Building_SunLamp</thingClass> -->
     <graphicData>
       <texPath>Things/Furniture/SolarLamp</texPath>
       <drawSize>(1,1)</drawSize>
