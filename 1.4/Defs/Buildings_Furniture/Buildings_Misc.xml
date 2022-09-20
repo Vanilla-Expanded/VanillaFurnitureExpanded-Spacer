@@ -1,58 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <ThingDef ParentName="LampBase">
-    <defName>Spacer_SunLamp</defName>
-    <label>biolab sun lamp</label>
-    <description>A large sun lamp which lights a large area brightly enough to grow crops as well as providing heat for the area, whilst consuming only a moderate amount of power. Never turns off at night and will not short circuit in rain.</description>
-    <thingClass>Building_SunLamp</thingClass>
-    <graphicData>
-      <texPath>Things/Furniture/LampBiolab</texPath>
-      <drawSize>(3.1,3.1)</drawSize>
-    </graphicData>
-    <blockWind>true</blockWind>
-    <tickerType>Rare</tickerType>
-    <statBases>
-      <WorkToBuild>3000</WorkToBuild>
-      <Mass>4.5</Mass>
-    </statBases>
-    <costList>
-      <Steel>60</Steel>
-      <Plasteel>60</Plasteel>
-      <ComponentSpacer>1</ComponentSpacer>
-    </costList>
-    <size>(3,3)</size>
-    <placeWorkers>
-      <li>PlaceWorker_Heater</li>
-    </placeWorkers>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <comps>
-      <li Class="CompProperties_Glower">
-        <overlightRadius>10</overlightRadius>
-        <glowRadius>18</glowRadius>
-        <glowColor>(370,370,370,0)</glowColor>
-      </li>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>1000</basePowerConsumption>
-      </li>
-      <li Class="CompProperties_HeatPusher">
-        <compClass>CompHeatPusherPowered</compClass>
-        <heatPerSecond>42</heatPerSecond>
-        <heatPushMaxTemperature>21</heatPushMaxTemperature>
-      </li>
-      <li Class="CompProperties_Breakdownable" />
-      <li Class="CompProperties_Flickable" />
-    </comps>
-    <specialDisplayRadius>7.8</specialDisplayRadius>
-    <researchPrerequisites>
-      <li>SpacerElectronics</li>
-    </researchPrerequisites>
-    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
-    <designationCategory>AOMorefurniture</designationCategory>
-  </ThingDef>
-
-  <ThingDef ParentName="LampBase">
     <defName>Light_SpacerLamp</defName>
     <label>spacer lamp</label>
     <description>A powerful advanced lamp for lighting up rooms effectively whilst utilising an integrated temperature regulation module to keep rooms warmer to a maximum temperature of 15C. Will not short circuit in rain.</description>
