@@ -20,6 +20,12 @@
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
         <basePowerConsumption>15</basePowerConsumption>
+        <powerUpgrades>
+          <li>
+            <researchProject>ColoredLights</researchProject>
+            <factor>0.5</factor>
+          </li>
+        </powerUpgrades>
       </li>
       <li Class="CompProperties_HeatPusher">
         <compClass>CompHeatPusherPowered</compClass>
@@ -30,6 +36,8 @@
       <li Class="CompProperties_Glower">
         <glowRadius>18</glowRadius>
         <glowColor>(370,370,340,0)</glowColor>
+        <colorPickerEnabled>true</colorPickerEnabled>
+        <darklightToggle>true</darklightToggle>
       </li>
     </comps>
     <statBases>
@@ -136,6 +144,8 @@
       <li Class="CompProperties_Glower">
         <glowRadius>8</glowRadius>
         <glowColor>(370,370,340,0)</glowColor>
+        <colorPickerEnabled>true</colorPickerEnabled>
+        <darklightToggle>true</darklightToggle>
       </li>
       <li Class="CompProperties_Breakdownable" />
       <li Class="CompProperties_Flickable" />

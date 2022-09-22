@@ -186,11 +186,19 @@
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>true</shortCircuitInRain>
         <basePowerConsumption>30</basePowerConsumption>
+        <powerUpgrades>
+          <li>
+            <researchProject>ColoredLights</researchProject>
+            <factor>0.5</factor>
+          </li>
+        </powerUpgrades>
       </li>
       <li Class="CompProperties_Flickable" />
       <li Class="CompProperties_Glower">
         <glowRadius>8</glowRadius>
         <glowColor>(255,255,255,0)</glowColor>
+        <colorPickerEnabled>true</colorPickerEnabled>
+        <darklightToggle>true</darklightToggle>
       </li>
     </comps>
     <staticSunShadowHeight>0</staticSunShadowHeight>
@@ -264,11 +272,19 @@
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>true</shortCircuitInRain>
         <basePowerConsumption>30</basePowerConsumption>
+        <powerUpgrades>
+          <li>
+            <researchProject>ColoredLights</researchProject>
+            <factor>0.5</factor>
+          </li>
+        </powerUpgrades>
       </li>
       <li Class="CompProperties_Flickable" />
       <li Class="CompProperties_Glower">
         <glowRadius>8</glowRadius>
         <glowColor>(255,255,255,0)</glowColor>
+        <colorPickerEnabled>true</colorPickerEnabled>
+        <darklightToggle>true</darklightToggle>
       </li>
     </comps>
     <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
