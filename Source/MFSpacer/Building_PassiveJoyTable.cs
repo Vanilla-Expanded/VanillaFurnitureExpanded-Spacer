@@ -13,7 +13,7 @@ namespace MFSpacer
             CompPowerTrader comp = this.TryGetComp<CompPowerTrader>();
             if (comp != null && comp.PowerOn)
             {
-                List<Pawn> pawnList = this.CollectPawns();
+                List<Pawn> pawnList = CollectPawns();
                 if (pawnList != null)
                 {
                     for (int index = 0; index < pawnList.Count; ++index)
@@ -29,7 +29,7 @@ namespace MFSpacer
         public List<Pawn> CollectPawns()
         {
             List<Pawn> pawnList = new List<Pawn>();
-            if (this.Map.thingGrid.CellContains(this.Position, ThingDefOf.Table_interactive_2x2c))
+            if (Map.thingGrid.CellContains(Position, ThingDefOf.Table_interactive_2x2c))
             {
                 AdjacentCellsAround_2x2[0] = new IntVec3(0, 0, 2);
                 AdjacentCellsAround_2x2[5] = new IntVec3(1, 0, 2);
@@ -41,16 +41,16 @@ namespace MFSpacer
                 AdjacentCellsAround_2x2[7] = new IntVec3(-1, 0, 1);
                 for (int index = 0; index < AdjacentCellsAround_2x2.Length; ++index)
                 {
-                    if ((this.Position + AdjacentCellsAround_2x2[index]).GetFirstPawn(this.Map) != null)
-                        pawnList.Add((this.Position + AdjacentCellsAround_2x2[index]).GetFirstPawn(this.Map));
+                    if ((Position + AdjacentCellsAround_2x2[index]).GetFirstPawn(Map) != null)
+                        pawnList.Add((Position + AdjacentCellsAround_2x2[index]).GetFirstPawn(Map));
                 }
             }
             else
             {
                 for (int index = 0; index < GenAdj.CardinalDirectionsAround.Length; ++index)
                 {
-                    if ((this.Position + GenAdj.CardinalDirectionsAround[index]).GetFirstPawn(this.Map) != null)
-                        pawnList.Add((this.Position + GenAdj.CardinalDirectionsAround[index]).GetFirstPawn(this.Map));
+                    if ((Position + GenAdj.CardinalDirectionsAround[index]).GetFirstPawn(Map) != null)
+                        pawnList.Add((Position + GenAdj.CardinalDirectionsAround[index]).GetFirstPawn(Map));
                 }
             }
             return pawnList;

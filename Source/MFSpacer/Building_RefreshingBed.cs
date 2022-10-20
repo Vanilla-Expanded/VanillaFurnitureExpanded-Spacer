@@ -9,20 +9,20 @@ namespace MFSpacer
 
         public override void Tick()
         {
-            for (int slotIndex = 0; slotIndex < this.SleepingSlotsCount; ++slotIndex)
+            for (int slotIndex = 0; slotIndex < SleepingSlotsCount; ++slotIndex)
             {
-                if (this.GetCurOccupant(slotIndex) != null)
+                if (GetCurOccupant(slotIndex) != null)
                 {
-                    Pawn curOccupant = this.GetCurOccupant(slotIndex);
-                    ++this.TicksCounted[slotIndex];
-                    if (this.TicksCounted[slotIndex] == 1250 && curOccupant.GetPosture() == PawnPosture.LayingInBed)
+                    Pawn curOccupant = GetCurOccupant(slotIndex);
+                    ++TicksCounted[slotIndex];
+                    if (TicksCounted[slotIndex] == 1250 && curOccupant.GetPosture() == PawnPosture.LayingInBed)
                     {
                         Hediff firstHediffOfDef = curOccupant.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.Bed_RefreshingSleep);
                         if (firstHediffOfDef == null)
                             curOccupant.health.AddHediff(HediffDefOf.Bed_RefreshingSleep);
                         else
                             firstHediffOfDef.Severity += 0.05f;
-                        this.TicksCounted[slotIndex] = 0;
+                        TicksCounted[slotIndex] = 0;
                     }
                 }
             }

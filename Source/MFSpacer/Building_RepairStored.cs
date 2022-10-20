@@ -1,15 +1,27 @@
-﻿using RimWorld;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using RimWorld;
 using UnityEngine;
 using Verse;
 
 namespace MFSpacer
 {
+    [StaticConstructorOnStartup]
     public class Building_RepairStored : Building_Storage
     {
         private int TicksCounted = 0;
         private CompPowerTrader powerComp;
         private bool shouldAutoForbid = true;
+        private Texture2D cachedCommandTex;
+
+        private Texture2D CommandTex
+        {
+            get
+            {
+                if (cachedCommandTex == null)
+                    cachedCommandTex = ContentFinder<Texture2D>.Get("Icons/Forbidden");
+                return cachedCommandTex;
+            }
+        }
 
         public override void ExposeData()
         {
@@ -27,16 +39,16 @@ namespace MFSpacer
         {
             if (powerComp == null || powerComp.PowerOn)
             {
-                ++this.TicksCounted;
-                if (this.TicksCounted == 2500)
+                ++TicksCounted;
+                if (TicksCounted == 2500)
                 {
-                    Thing firstItem = this.Position.GetFirstItem(this.Map);
-                    if (firstItem != null 
-                        && firstItem.HitPoints != firstItem.MaxHitPoints 
+                    Thing firstItem = Position.GetFirstItem(Map);
+                    if (firstItem != null
+                        && firstItem.HitPoints != firstItem.MaxHitPoints
                         && (firstItem.def.IsWithinCategory(ThingCategoryDefOf.Weapons) || firstItem.def.IsWithinCategory(ThingCategoryDefOf.Apparel)))
                     {
                         ++firstItem.HitPoints;
-                    }                        
+                    }
 
                     if (shouldAutoForbid && firstItem != null)
                     {
@@ -50,7 +62,7 @@ namespace MFSpacer
                         }
                     }
 
-                    this.TicksCounted = 0;
+                    TicksCounted = 0;
                 }
             }
             base.Tick();
@@ -59,25 +71,19 @@ namespace MFSpacer
         public override IEnumerable<Gizmo> GetGizmos()
         {
             foreach (var gizmo in base.GetGizmos())
-            {
                 yield return gizmo;
-            }
-            if (this.Faction == Faction.OfPlayer)
+
+            if (Faction == Faction.OfPlayer)
             {
-                yield return new Command_Toggle
-                {
-                    defaultLabel = "EnableAutoForbid".Translate(),
-                    defaultDesc = "EnableAutoForbidExplanation".Translate(),
-                    hotKey = KeyBindingDefOf.Misc3,
-                    icon = ContentFinder<Texture2D>.Get("Icons/Forbidden", true),
-                    isActive = () => this.shouldAutoForbid,
-                    toggleAction = delegate ()
-                    {
-                        this.shouldAutoForbid = !this.shouldAutoForbid;
-                    }
-                };
+                Command_Toggle commandToggle = new Command_Toggle();
+                commandToggle.hotKey = KeyBindingDefOf.Command_TogglePower;
+                commandToggle.icon = CommandTex;
+                commandToggle.defaultLabel = "EnableAutoForbid".Translate();
+                commandToggle.defaultDesc = "EnableAutoForbidExplanation".Translate();
+                commandToggle.isActive = () => shouldAutoForbid;
+                commandToggle.toggleAction = () => shouldAutoForbid = !shouldAutoForbid;
+                yield return commandToggle;
             }
-            yield break;
         }
     }
 }
