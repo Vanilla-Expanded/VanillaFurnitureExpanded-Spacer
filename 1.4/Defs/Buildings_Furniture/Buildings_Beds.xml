@@ -22,6 +22,7 @@
       <Comfort>1.1</Comfort>
       <ImmunityGainSpeedFactor>1.1</ImmunityGainSpeedFactor>
       <SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
+      <BirthRitualQualityOffset MayRequire="Ludeon.RimWorld.Biotech">2.2</BirthRitualQualityOffset> <!-- 10% better than regular beds, just like the comfort stat -->
     </statBases>
     <comps>
       <li Class="CompProperties_AffectedByFacilities">
@@ -92,6 +93,7 @@
       <Comfort>1.15</Comfort>
       <ImmunityGainSpeedFactor>1.1</ImmunityGainSpeedFactor>
       <SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
+      <BirthRitualQualityOffset MayRequire="Ludeon.RimWorld.Biotech">2.2</BirthRitualQualityOffset> <!-- 10% better than regular beds, just like the comfort stat -->
     </statBases>
     <comps>
       <li Class="CompProperties_AffectedByFacilities">
