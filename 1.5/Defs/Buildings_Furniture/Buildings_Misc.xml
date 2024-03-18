@@ -1,58 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
-  <ThingDef ParentName="LampBase">
-    <defName>Spacer_SunLamp</defName>
-    <label>biolab sun lamp</label>
-    <description>A large sun lamp which lights a large area brightly enough to grow crops as well as providing heat for the area, whilst consuming only a moderate amount of power. Never turns off at night and will not short circuit in rain.</description>
-    <thingClass>Building_SunLamp</thingClass>
-    <graphicData>
-      <texPath>Things/Furniture/LampBiolab</texPath>
-      <drawSize>(3.1,3.1)</drawSize>
-    </graphicData>
-    <blockWind>true</blockWind>
-    <tickerType>Rare</tickerType>
-    <statBases>
-      <WorkToBuild>3000</WorkToBuild>
-      <Mass>4.5</Mass>
-    </statBases>
-    <costList>
-      <Steel>60</Steel>
-      <Plasteel>60</Plasteel>
-      <ComponentSpacer>1</ComponentSpacer>
-    </costList>
-    <size>(3,3)</size>
-    <placeWorkers>
-      <li>PlaceWorker_Heater</li>
-    </placeWorkers>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <comps>
-      <li Class="CompProperties_Glower">
-        <overlightRadius>10</overlightRadius>
-        <glowRadius>18</glowRadius>
-        <glowColor>(370,370,370,0)</glowColor>
-      </li>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>1000</basePowerConsumption>
-      </li>
-      <li Class="CompProperties_HeatPusher">
-        <compClass>CompHeatPusherPowered</compClass>
-        <heatPerSecond>42</heatPerSecond>
-        <heatPushMaxTemperature>21</heatPushMaxTemperature>
-      </li>
-      <li Class="CompProperties_Breakdownable"/>
-      <li Class="CompProperties_Flickable"/>
-    </comps>
-    <specialDisplayRadius>7.8</specialDisplayRadius>
-    <researchPrerequisites>
-      <li>SpacerElectronics</li>
-    </researchPrerequisites>
-    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
-    <designationCategory>AOMorefurniture</designationCategory>
-  </ThingDef>
-
   <ThingDef ParentName="LampBase">
     <defName>Light_SpacerLamp</defName>
     <label>spacer lamp</label>
@@ -73,16 +20,24 @@
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
         <basePowerConsumption>15</basePowerConsumption>
+        <powerUpgrades>
+          <li>
+            <researchProject>ColoredLights</researchProject>
+            <factor>0.5</factor>
+          </li>
+        </powerUpgrades>
       </li>
       <li Class="CompProperties_HeatPusher">
         <compClass>CompHeatPusherPowered</compClass>
         <heatPerSecond>15</heatPerSecond>
         <heatPushMaxTemperature>15</heatPushMaxTemperature>
       </li>
-      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Flickable" />
       <li Class="CompProperties_Glower">
         <glowRadius>18</glowRadius>
         <glowColor>(370,370,340,0)</glowColor>
+        <colorPickerEnabled>true</colorPickerEnabled>
+        <darklightToggle>true</darklightToggle>
       </li>
     </comps>
     <statBases>
@@ -128,8 +83,8 @@
         <shortCircuitInRain>true</shortCircuitInRain>
         <basePowerConsumption>400</basePowerConsumption>
       </li>
-      <li Class="CompProperties_Breakdownable"/>
-      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Flickable" />
     </comps>
     <tickerType>Normal</tickerType>
     <building>
@@ -140,9 +95,18 @@
         <filter>
           <categories>
             <li>Weapons</li>
+            <li>Apparel</li>
           </categories>
         </filter>
       </defaultStorageSettings>
+      <fixedStorageSettings>
+        <filter>
+          <categories>
+            <li>Weapons</li>
+            <li>Apparel</li>
+          </categories>
+        </filter>
+      </fixedStorageSettings>
     </building>
     <inspectorTabs>
       <li>ITab_Storage</li>
@@ -161,7 +125,6 @@
     <defName>Spacer_OutdoorLamp</defName>
     <label>outdoor solar lamp</label>
     <description>A self sustained lamp for outdoor use, weaker than a normal industrial lamp but does not require any power, storing energy during the day to power itself 24/7. Will not short circuit in rain.</description>
-    <!-- <thingClass>Building_SunLamp</thingClass> -->
     <graphicData>
       <texPath>Things/Furniture/SolarLamp</texPath>
       <drawSize>(1,1)</drawSize>
@@ -181,9 +144,11 @@
       <li Class="CompProperties_Glower">
         <glowRadius>8</glowRadius>
         <glowColor>(370,370,340,0)</glowColor>
+        <colorPickerEnabled>true</colorPickerEnabled>
+        <darklightToggle>true</darklightToggle>
       </li>
-      <li Class="CompProperties_Breakdownable"/>
-      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Flickable" />
     </comps>
     <placeWorkers>
       <li>PlaceWorker_NotUnderRoof</li>
@@ -196,70 +161,5 @@
     <building>
       <allowAutoroof>false</allowAutoroof>
     </building>
-  </ThingDef>
-
-  <ThingDef ParentName="BuildingBase">
-    <defName>Reinforced_WallAT</defName>
-    <label>reinforced wall</label>
-    <description>A reinforced impassable wall, created by layering materials over eachother. Capable of holding up a roof.</description>
-    <thingClass>Building</thingClass>
-    <category>Building</category>
-    <graphicData>
-      <texPath>Things/Other/ReinforcedMetalWall/ReinforcedMetalWall_Atlas</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <linkType>CornerFiller</linkType>
-      <linkFlags>
-        <li>Wall</li>
-        <li>Rock</li>
-      </linkFlags>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-        <edgeTop>Damage/Edge</edgeTop>
-        <edgeBot>Damage/Edge</edgeBot>
-        <edgeLeft>Damage/Edge</edgeLeft>
-        <edgeRight>Damage/Edge</edgeRight>
-      </damageData>
-    </graphicData>
-    <uiIconPath>Things/Other/ReinforcedMetalWall/ReinforcedMetalWall_MenuIcon</uiIconPath>
-    <statBases>
-      <MaxHitPoints>1000</MaxHitPoints>
-      <WorkToBuild>300</WorkToBuild>
-      <Flammability>0.2</Flammability>
-    </statBases>
-    <costStuffCount>15</costStuffCount>
-    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
-    <altitudeLayer>Building</altitudeLayer>
-    <passability>Impassable</passability>
-    <blockWind>true</blockWind>
-    <castEdgeShadows>true</castEdgeShadows>
-    <fillPercent>1</fillPercent>
-    <coversFloor>true</coversFloor>
-    <placingDraggableDimensions>1</placingDraggableDimensions>
-    <tickerType>Never</tickerType>
-    <rotatable>false</rotatable>
-    <selectable>true</selectable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-    <holdsRoof>true</holdsRoof>
-    <designationCategory>Structure</designationCategory>
-    <staticSunShadowHeight>1.0</staticSunShadowHeight>
-    <blockLight>true</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <stuffCategories>
-      <li>Metallic</li>
-    </stuffCategories>
-    <building>
-      <isInert>true</isInert>
-      <ai_chillDestination>false</ai_chillDestination>
-      <blueprintGraphicData>
-        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
-      </blueprintGraphicData>
-    </building>
-    <researchPrerequisites>
-      <li>SpacerFurniture</li>
-    </researchPrerequisites>
   </ThingDef>
 </Defs>
