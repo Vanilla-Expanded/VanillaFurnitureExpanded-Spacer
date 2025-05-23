@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Building_PassiveJoyTable.cs" />
+    <Compile Include="CompPassiveJoyTable.cs" />
     <Compile Include="Building_RepairStored.cs" />
     <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
