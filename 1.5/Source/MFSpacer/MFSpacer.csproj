@@ -33,11 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Building_PassiveJoyTable.cs" />
-    <Compile Include="Building_RefreshingBed.cs" />
     <Compile Include="Building_RepairStored.cs" />
-    <Compile Include="HediffDefOf.cs" />
-    <Compile Include="JoyKindDefOf.cs" />
-    <Compile Include="ThingDefOf.cs" />
     <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
