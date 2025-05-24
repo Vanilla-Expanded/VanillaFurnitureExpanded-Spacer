@@ -1,10 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <ThingDef ParentName="BedWithQualityBase">
+
+  <ThingDef Name="VFES_AdvancedBedBase" ParentName="BedWithQualityBase" Abstract="True">
+    <statBases>
+      <Flammability>1.0</Flammability>
+      <BedRestEffectiveness>1.2</BedRestEffectiveness>
+      <Comfort>0.95</Comfort>
+      <ImmunityGainSpeedFactor>1.2</ImmunityGainSpeedFactor>
+      <SurgerySuccessChanceFactor>1.1</SurgerySuccessChanceFactor>
+      <BirthRitualQualityOffset MayRequire="Ludeon.RimWorld.Biotech">5</BirthRitualQualityOffset>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>EndTable</li>
+          <li>Dresser</li>
+          <li>Table_RoyalDresser</li>
+          <li>Table_RoyalEndTable</li>
+          <li>Table_Wardrobe</li>
+          <li>Table_IlluminatedEndTable</li>
+          <li>Table_IlluminatedDresser</li>
+          <li MayRequire="Ludeon.RimWorld.Ideology">SleepAccelerator</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>1</explosiveRadius>
+        <explosiveDamageType>Flame</explosiveDamageType>
+      </li>
+    </comps>
+    <building>
+      <bed_showSleeperBody>false</bed_showSleeperBody>
+      <bed_healPerDay>6</bed_healPerDay>
+      <paintable>true</paintable>
+    </building>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <pathCost>42</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <designationCategory>Furniture</designationCategory>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+  </ThingDef>
+
+  <ThingDef ParentName="VFES_AdvancedBedBase">
     <defName>Bed_AdvBed</defName>
     <label>advanced bed</label>
-    <description>A powered high-tech bed that automatically readjusts itself to perfectly fit the contours of the sleeper, with built in white noise generation. Sleepers often report feeling refreshed and more alert the morning after.</description>
-    <thingClass>MFSpacer.Building_RefreshingBed</thingClass>
+    <description>A cutting-edge, fully motorized bed equipped with pressure-adjusting surfaces, biometric monitoring, and tech-assisted sleep tracking. It offers unmatched comfort, rest efficiency, and surgical support.</description>
     <graphicData>
       <texPath>Things/Furniture/AdvancedBed/AdvancedBed</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -14,51 +56,17 @@
     <castEdgeShadows>True</castEdgeShadows>
     <statBases>
       <MaxHitPoints>300</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-      <WorkToBuild>20000</WorkToBuild>
-      <Mass>75</Mass>
-      <Beauty>8</Beauty>
-      <BedRestEffectiveness>1.25</BedRestEffectiveness>
-      <Comfort>1.1</Comfort>
-      <ImmunityGainSpeedFactor>1.1</ImmunityGainSpeedFactor>
-      <SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
+      <WorkToBuild>5000</WorkToBuild>
+      <Mass>55</Mass>
+      <Beauty>4</Beauty>
     </statBases>
-    <comps>
-      <li Class="CompProperties_AffectedByFacilities">
-        <linkableFacilities>
-          <li>EndTable</li>
-          <li>Dresser</li>
-          <li>Table_RoyalDresser</li>
-          <li>Table_RoyalEndTable</li>
-          <li>Table_Wardrobe</li>
-          <li>Table_IlluminatedEndTable</li>
-          <li>Table_IlluminatedDresser</li>
-          <li MayRequire="Ludeon.RimWorld.Ideology">SleepAccelerator</li>
-        </linkableFacilities>
-      </li>
-      <li Class="CompProperties_Explosive">
-        <explosiveRadius>1</explosiveRadius>
-        <explosiveDamageType>Flame</explosiveDamageType>
-      </li>
-    </comps>
-    <tickerType>Normal</tickerType>
     <size>(1,2)</size>
-    <stuffCategories>
-      <li>Metallic</li>
-      <li>Woody</li>
-    </stuffCategories>
-    <costStuffCount>100</costStuffCount>
+    <costStuffCount>60</costStuffCount>
     <costList>
-      <Uranium>5</Uranium>
+      <Steel>25</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
       <ComponentSpacer>1</ComponentSpacer>
     </costList>
-    <building>
-      <bed_showSleeperBody>false</bed_showSleeperBody>
-      <bed_healPerDay>4</bed_healPerDay>
-      <paintable>true</paintable>
-    </building>
-    <fillPercent>0.4</fillPercent>
-    <pathCost>60</pathCost>
     <leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
     <staticSunShadowHeight>0.17</staticSunShadowHeight>
     <researchPrerequisites>
@@ -66,15 +74,12 @@
     </researchPrerequisites>
     <techLevel>Spacer</techLevel>
     <uiIconScale>1</uiIconScale>
-    <designationCategory>AOMorefurniture</designationCategory>
-    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
   </ThingDef>
 
-  <ThingDef ParentName="BedWithQualityBase">
+  <ThingDef ParentName="VFES_AdvancedBedBase">
     <defName>Bed_AdvDoubleBed</defName>
     <label>advanced double bed</label>
-    <description>A powered high-tech double bed that automatically readjusts itself to perfectly fit the contours of both sleepers, with built in white noise generation. Sleepers often report feeling refreshed and more alert the morning after.</description>
-    <thingClass>MFSpacer.Building_RefreshingBed</thingClass>
+    <description>A cutting-edge, fully motorized bed that fits two people, equipped with pressure-adjusting surfaces, biometric monitoring, and tech-assisted sleep tracking. It offers unmatched comfort, rest efficiency, and surgical support.</description>
     <graphicData>
       <texPath>Things/Furniture/AdvancedBedDouble/AdvancedBedDouble</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -84,51 +89,17 @@
     <castEdgeShadows>True</castEdgeShadows>
     <statBases>
       <MaxHitPoints>350</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-      <WorkToBuild>20000</WorkToBuild>
-      <Mass>125</Mass>
-      <Beauty>12</Beauty>
-      <BedRestEffectiveness>1.3</BedRestEffectiveness>
-      <Comfort>1.15</Comfort>
-      <ImmunityGainSpeedFactor>1.1</ImmunityGainSpeedFactor>
-      <SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
+      <WorkToBuild>9000</WorkToBuild>
+      <Mass>70</Mass>
+      <Beauty>8</Beauty>
     </statBases>
-    <comps>
-      <li Class="CompProperties_AffectedByFacilities">
-        <linkableFacilities>
-          <li>EndTable</li>
-          <li>Dresser</li>
-          <li>Table_RoyalDresser</li>
-          <li>Table_RoyalEndTable</li>
-          <li>Table_Wardrobe</li>
-          <li>Table_IlluminatedEndTable</li>
-          <li>Table_IlluminatedDresser</li>
-          <li MayRequire="Ludeon.RimWorld.Ideology">SleepAccelerator</li>
-        </linkableFacilities>
-      </li>
-      <li Class="CompProperties_Explosive">
-        <explosiveRadius>1</explosiveRadius>
-        <explosiveDamageType>Flame</explosiveDamageType>
-      </li>
-    </comps>
-    <tickerType>Normal</tickerType>
     <size>(2,2)</size>
-    <stuffCategories>
-      <li>Metallic</li>
-      <li>Woody</li>
-    </stuffCategories>
-    <costStuffCount>180</costStuffCount>
+    <costStuffCount>100</costStuffCount>
     <costList>
-      <Uranium>10</Uranium>
+      <Steel>40</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
       <ComponentSpacer>2</ComponentSpacer>
     </costList>
-    <building>
-      <bed_showSleeperBody>false</bed_showSleeperBody>
-      <bed_healPerDay>4</bed_healPerDay>
-      <paintable>true</paintable>
-    </building>
-    <fillPercent>0.4</fillPercent>
-    <pathCost>60</pathCost>
     <leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
     <staticSunShadowHeight>0.17</staticSunShadowHeight>
     <researchPrerequisites>
@@ -136,8 +107,6 @@
     </researchPrerequisites>
     <techLevel>Spacer</techLevel>
     <uiIconScale>1</uiIconScale>
-    <designationCategory>AOMorefurniture</designationCategory>
-    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
   </ThingDef>
 
   <ThingDef ParentName="TableBase">
@@ -193,7 +162,7 @@
           </li>
         </powerUpgrades>
       </li>
-      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Glower">
         <glowRadius>8</glowRadius>
         <glowColor>(255,255,255,0)</glowColor>
@@ -279,7 +248,7 @@
           </li>
         </powerUpgrades>
       </li>
-      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Glower">
         <glowRadius>8</glowRadius>
         <glowColor>(255,255,255,0)</glowColor>
@@ -293,4 +262,5 @@
       <paintable>true</paintable>
     </building>
   </ThingDef>
+
 </Defs>
