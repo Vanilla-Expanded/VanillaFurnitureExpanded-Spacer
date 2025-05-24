@@ -22,7 +22,7 @@ namespace MFSpacer
 
         public void HandlePawnJoy()
         {
-            if (parent.def.size.x == 1 && parent.def.size.z == 1)
+            if (parent.def.size is { x: 1, z: 1 })
             {
                 // Using this method for a 1x1 building is faster than GenAdjFast.AdjacentCellsCardinal
                 for (var index = 0; index < 4; index++)
