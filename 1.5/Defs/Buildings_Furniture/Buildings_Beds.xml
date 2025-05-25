@@ -23,10 +23,6 @@
           <li MayRequire="Ludeon.RimWorld.Ideology">SleepAccelerator</li>
         </linkableFacilities>
       </li>
-      <li Class="CompProperties_Explosive">
-        <explosiveRadius>1</explosiveRadius>
-        <explosiveDamageType>Flame</explosiveDamageType>
-      </li>
     </comps>
     <building>
       <bed_showSleeperBody>false</bed_showSleeperBody>
@@ -41,6 +37,7 @@
     <fillPercent>0.4</fillPercent>
     <designationCategory>Furniture</designationCategory>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <tickerType>Normal</tickerType>
   </ThingDef>
 
   <ThingDef ParentName="VFES_AdvancedBedBase">
