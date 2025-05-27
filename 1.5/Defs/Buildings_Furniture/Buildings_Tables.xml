@@ -28,7 +28,7 @@
     <defName>Table_interactive_1x1c</defName>
     <label>interactive table (1x1)</label>
     <graphicData>
-      <texPath>NewThings/Furniture/Tables/TableInteractive1x1</texPath>
+      <texPath>NewThings/Furniture/TableInteractive1x1</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(1,1)</drawSize>
@@ -75,7 +75,7 @@
     <defName>Table_interactive_2x2c</defName>
     <label>interactive table (2x2)</label>
     <graphicData>
-      <texPath>NewThings/Furniture/Tables/TableInteractive2x2</texPath>
+      <texPath>NewThings/Furniture/TableInteractive2x2</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(2,2)</drawSize>

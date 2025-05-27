@@ -68,7 +68,7 @@
       <li>MechaniteRestoration</li>
     </researchPrerequisites>
     <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
-    <designationCategory>AOMorefurniture</designationCategory>
+    <designationCategory>Misc</designationCategory>
   </ThingDef>
 
   <ThingDef ParentName="LampBase">
@@ -109,7 +109,7 @@
       <li>SpacerElectronics</li>
     </researchPrerequisites>
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
-    <designationCategory>AOMorefurniture</designationCategory>
+    <designationCategory>Furniture</designationCategory>
     <building>
       <allowAutoroof>false</allowAutoroof>
     </building>

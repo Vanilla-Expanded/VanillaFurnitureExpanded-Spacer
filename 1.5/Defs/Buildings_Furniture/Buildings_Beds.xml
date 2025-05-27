@@ -45,7 +45,7 @@
     <label>advanced bed</label>
     <description>A cutting-edge, fully motorized bed equipped with pressure-adjusting surfaces, biometric monitoring, and tech-assisted sleep tracking. It offers unmatched comfort, rest efficiency, and surgical support.</description>
     <graphicData>
-      <texPath>NewThings/Beds/AdvancedBed</texPath>
+      <texPath>NewThings/Furniture/Bed/AdvancedBed</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(2,2)</drawSize>
@@ -78,7 +78,7 @@
     <label>advanced double bed</label>
     <description>A cutting-edge, fully motorized bed that fits two people, equipped with pressure-adjusting surfaces, biometric monitoring, and tech-assisted sleep tracking. It offers unmatched comfort, rest efficiency, and surgical support.</description>
     <graphicData>
-      <texPath>NewThings/Beds/AdvancedDoubleBed</texPath>
+      <texPath>NewThings/Furniture/Bed/AdvancedDoubleBed</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(2,2)</drawSize>
@@ -113,7 +113,7 @@
     <surfaceType>Item</surfaceType>
     <graphicData>
       <graphicClass>VFECore.Graphic_DarklightMulti</graphicClass>
-      <texPath>NewThings/Furniture/BedLinkables/IlluminatedEndTable</texPath>
+      <texPath>NewThings/Furniture/IlluminatedEndTable</texPath>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(1,1)</drawSize>
       <shadowData>
@@ -171,7 +171,7 @@
     <staticSunShadowHeight>0</staticSunShadowHeight>
     <castEdgeShadows>false</castEdgeShadows>
     <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
-    <designationCategory>AOMorefurniture</designationCategory>
+    <designationCategory>Furniture</designationCategory>
     <building>
       <paintable>true</paintable>
     </building>
@@ -183,7 +183,7 @@
     <description>An illuminated dresser, adorned with light strips. Gives a small comfort bonus to all nearby beds, whilst lighting up the room. Placing more than one dresser near the same bed has no effect.</description>
     <graphicData>
       <graphicClass>VFECore.Graphic_DarklightMulti</graphicClass>
-      <texPath>NewThings/Furniture/BedLinkables/IlluminatedDresser</texPath>
+      <texPath>NewThings/Furniture/IlluminatedDresser</texPath>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(2,1)</drawSize>
       <damageData>
@@ -256,7 +256,7 @@
       </li>
     </comps>
     <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
-    <designationCategory>AOMorefurniture</designationCategory>
+    <designationCategory>Furniture</designationCategory>
     <building>
       <paintable>true</paintable>
     </building>

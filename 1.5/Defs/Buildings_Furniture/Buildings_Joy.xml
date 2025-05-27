@@ -68,6 +68,6 @@
       <ComponentSpacer>4</ComponentSpacer>
     </costList>
     <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
-    <designationCategory>AOMorefurniture</designationCategory>
+    <designationCategory>Joy</designationCategory>
   </ThingDef>
 </Defs>

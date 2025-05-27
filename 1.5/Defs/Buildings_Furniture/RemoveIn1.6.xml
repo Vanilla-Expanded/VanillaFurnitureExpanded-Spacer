@@ -49,7 +49,6 @@
       <li>SpacerElectronics</li>
     </researchPrerequisites>
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
-    <designationCategory>AOMorefurniture</designationCategory>
   </ThingDef>
 
 </Defs>

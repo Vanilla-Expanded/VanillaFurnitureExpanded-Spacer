@@ -5,7 +5,7 @@
     <label>advanced chair</label>
     <description>An advanced chair that automatically changes in response to the contours of the sitter, giving optimal back support at all times and vastly improving comfort. The ultimate luxury.</description>
     <graphicData>
-      <texPath>NewThings/Furniture/Seats/AdvancedChair</texPath>
+      <texPath>NewThings/Furniture/AdvancedChair</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(1,1)</drawSize>
@@ -49,6 +49,6 @@
     <researchPrerequisites>
       <li>SpacerFurniture</li>
     </researchPrerequisites>
-    <designationCategory>AOMorefurniture</designationCategory>
+    <designationCategory>Furniture</designationCategory>
   </ThingDef>
 </Defs>
