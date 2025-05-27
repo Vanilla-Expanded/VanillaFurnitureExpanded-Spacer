@@ -5,7 +5,7 @@
     <label>ultrascreen television</label>
     <description>A huge, curved, ultra-tech television. Viewers feel as if they are part of the action themselves. Very entertaining. Capable of picking up signal from the core worlds.</description>
     <graphicData>
-      <texPath>Things/Furniture/UltratechTV/UltratechTV</texPath>
+      <texPath>NewThings/Joy/HyperscreenTV</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shadowData>
         <volume>(2.5, 0.6, 0.1)</volume>

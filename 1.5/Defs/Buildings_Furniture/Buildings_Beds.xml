@@ -45,7 +45,7 @@
     <label>advanced bed</label>
     <description>A cutting-edge, fully motorized bed equipped with pressure-adjusting surfaces, biometric monitoring, and tech-assisted sleep tracking. It offers unmatched comfort, rest efficiency, and surgical support.</description>
     <graphicData>
-      <texPath>Things/Furniture/AdvancedBed/AdvancedBed</texPath>
+      <texPath>NewThings/Beds/AdvancedBed</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(2,2)</drawSize>
@@ -78,7 +78,7 @@
     <label>advanced double bed</label>
     <description>A cutting-edge, fully motorized bed that fits two people, equipped with pressure-adjusting surfaces, biometric monitoring, and tech-assisted sleep tracking. It offers unmatched comfort, rest efficiency, and surgical support.</description>
     <graphicData>
-      <texPath>Things/Furniture/AdvancedBedDouble/AdvancedBedDouble</texPath>
+      <texPath>NewThings/Beds/AdvancedDoubleBed</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(2,2)</drawSize>
@@ -112,8 +112,8 @@
     <description>A small illuminated bedside table adorned with light strips which makes nearby beds a little bit more comfortable, whilst lighting the room. Must be placed directly adjacent to the head of the bed. Placing more than one end table near the same bed has no effect.</description>
     <surfaceType>Item</surfaceType>
     <graphicData>
-      <texPath>Things/Furniture/IlluminatedEndTable/IlluminatedEndTable</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>NewThings/Furniture/BedLinkables/IlluminatedEndTable</texPath>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(1,1)</drawSize>
       <shadowData>
@@ -181,8 +181,8 @@
     <label>illuminated dresser</label>
     <description>An illuminated dresser, adorned with light strips. Gives a small comfort bonus to all nearby beds, whilst lighting up the room. Placing more than one dresser near the same bed has no effect.</description>
     <graphicData>
-      <texPath>Things/Furniture/IlluminatedDresser/IlluminatedDresser</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>NewThings/Furniture/BedLinkables/IlluminatedDresser</texPath>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(2,1)</drawSize>
       <damageData>
