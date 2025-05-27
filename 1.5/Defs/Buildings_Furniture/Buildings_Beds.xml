@@ -112,7 +112,7 @@
     <description>A small illuminated bedside table adorned with light strips which makes nearby beds a little bit more comfortable, whilst lighting the room. Must be placed directly adjacent to the head of the bed. Placing more than one end table near the same bed has no effect.</description>
     <surfaceType>Item</surfaceType>
     <graphicData>
-      <graphicClass>Graphic_Multi</graphicClass>
+      <graphicClass>VFECore.Graphic_DarklightMulti</graphicClass>
       <texPath>NewThings/Furniture/BedLinkables/IlluminatedEndTable</texPath>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(1,1)</drawSize>
@@ -161,6 +161,7 @@
       </li>
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Glower">
+        <compClass>VFECore.CompGlower_DirtyMapMesh</compClass>
         <glowRadius>8</glowRadius>
         <glowColor>(255,255,255,0)</glowColor>
         <colorPickerEnabled>true</colorPickerEnabled>
@@ -181,7 +182,7 @@
     <label>illuminated dresser</label>
     <description>An illuminated dresser, adorned with light strips. Gives a small comfort bonus to all nearby beds, whilst lighting up the room. Placing more than one dresser near the same bed has no effect.</description>
     <graphicData>
-      <graphicClass>Graphic_Multi</graphicClass>
+      <graphicClass>VFECore.Graphic_DarklightMulti</graphicClass>
       <texPath>NewThings/Furniture/BedLinkables/IlluminatedDresser</texPath>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(2,1)</drawSize>
@@ -247,6 +248,7 @@
       </li>
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Glower">
+        <compClass>VFECore.CompGlower_DirtyMapMesh</compClass>
         <glowRadius>8</glowRadius>
         <glowColor>(255,255,255,0)</glowColor>
         <colorPickerEnabled>true</colorPickerEnabled>

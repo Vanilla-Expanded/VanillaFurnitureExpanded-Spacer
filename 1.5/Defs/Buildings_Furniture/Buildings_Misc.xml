@@ -126,6 +126,7 @@
     <label>outdoor solar lamp</label>
     <description>A self sustained lamp for outdoor use, weaker than a normal industrial lamp but does not require any power, storing energy during the day to power itself 24/7. Will not short circuit in rain.</description>
     <graphicData>
+      <graphicClass>VFECore.Graphic_DarklightSingle</graphicClass>
       <texPath>NewThings/Light/SolarLamp</texPath>
       <drawSize>(1,1)</drawSize>
     </graphicData>
@@ -142,6 +143,7 @@
     <size>(1,1)</size>
     <comps>
       <li Class="CompProperties_Glower">
+        <compClass>VFECore.CompGlower_DirtyMapMesh</compClass>
         <glowRadius>8</glowRadius>
         <glowColor>(370,370,340,0)</glowColor>
         <colorPickerEnabled>true</colorPickerEnabled>
