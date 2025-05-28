@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
+
   <ThingDef ParentName="BuildingBase">
     <defName>UltrascreenTV</defName>
-    <label>ultrascreen television</label>
-    <description>A huge, curved, ultra-tech television. Viewers feel as if they are part of the action themselves. Very entertaining. Capable of picking up signal from the core worlds.</description>
+    <label>hyperscreen television</label>
+    <description>A colossal, ultra-definition entertainment wall spanning multiple panels. Designed for luxurious colonies, it delivers an overwhelming visual experience with rich sound and vibrant clarity. Streams archived ultranet broadcasts from long-dead satellites and local data arrays.</description>
     <graphicData>
       <texPath>NewThings/Joy/HyperscreenTV</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -28,21 +29,22 @@
       <li>RewardStandardQualitySuper</li>
     </thingSetMakerTags>
     <statBases>
-      <WorkToBuild>160000</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>90000</WorkToBuild>
+      <MaxHitPoints>140</MaxHitPoints>
       <Flammability>1.0</Flammability>
-      <Mass>16</Mass>
+      <Mass>20</Mass>
       <JoyGainFactor>1.8</JoyGainFactor>
+      <Beauty>5</Beauty>
     </statBases>
-    <pathCost>70</pathCost>
+    <pathCost>50</pathCost>
     <passability>PassThroughOnly</passability>
     <size>(4,2)</size>
     <building>
       <joyKind>Television</joyKind>
       <spawnedConceptLearnOpportunity>TVForSickPeople</spawnedConceptLearnOpportunity>
       <boughtConceptLearnOpportunity>TVForSickPeople</boughtConceptLearnOpportunity>
-      <watchBuildingStandDistanceRange>2~9</watchBuildingStandDistanceRange>
-      <watchBuildingStandRectWidth>10</watchBuildingStandRectWidth>
+      <watchBuildingStandDistanceRange>3~8</watchBuildingStandDistanceRange>
+      <watchBuildingStandRectWidth>8</watchBuildingStandRectWidth>
       <watchBuildingInSameRoom>true</watchBuildingInSameRoom>
     </building>
     <placeWorkers>
@@ -52,7 +54,7 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>true</shortCircuitInRain>
-        <basePowerConsumption>850</basePowerConsumption>
+        <basePowerConsumption>700</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable" />
     </comps>
@@ -63,11 +65,12 @@
       <li>SpacerElectronics</li>
     </researchPrerequisites>
     <costList>
-      <Steel>300</Steel>
-      <ComponentIndustrial>16</ComponentIndustrial>
-      <ComponentSpacer>4</ComponentSpacer>
+      <Steel>240</Steel>
+      <ComponentIndustrial>20</ComponentIndustrial>
+      <ComponentSpacer>6</ComponentSpacer>
     </costList>
-    <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+    <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
     <designationCategory>Joy</designationCategory>
   </ThingDef>
+
 </Defs>

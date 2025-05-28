@@ -16,22 +16,25 @@
     <fillPercent>0.4</fillPercent>
     <castEdgeShadows>true</castEdgeShadows>
     <costList>
-      <Steel>75</Steel>
-      <ComponentSpacer>8</ComponentSpacer>
+      <Plasteel>20</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+      <MechSerumHealer>1</MechSerumHealer>
     </costList>
     <statBases>
-      <MaxHitPoints>300</MaxHitPoints>
-      <Mass>8</Mass>
-      <WorkToBuild>1200</WorkToBuild>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Mass>20</Mass>
+      <WorkToBuild>100000</WorkToBuild>
       <Flammability>0</Flammability>
+      <Beauty>0.5</Beauty>
     </statBases>
     <size>(1,1)</size>
+    <pathCost>50</pathCost>
     <defaultPlacingRot>South</defaultPlacingRot>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>true</shortCircuitInRain>
-        <basePowerConsumption>400</basePowerConsumption>
+        <basePowerConsumption>750</basePowerConsumption>
       </li>
       <li Class="CompProperties_Breakdownable" />
       <li Class="CompProperties_Flickable" />
@@ -74,28 +77,31 @@
   <ThingDef ParentName="LampBase">
     <defName>Spacer_OutdoorLamp</defName>
     <label>outdoor solar lamp</label>
-    <description>A self sustained lamp for outdoor use, weaker than a normal industrial lamp but does not require any power, storing energy during the day to power itself 24/7. Will not short circuit in rain.</description>
+    <description>An electrical standing lamp that lights an area, good for large outdoor spaces, with a small solar panel mounted on top. Stores electrical charge during the day, when it’s off, and automatically turns on at night.</description>
     <graphicData>
       <graphicClass>VFECore.Graphic_DarklightSingle</graphicClass>
       <texPath>NewThings/Light/SolarLamp</texPath>
       <drawSize>(1,1)</drawSize>
     </graphicData>
-    <blockWind>true</blockWind>
     <tickerType>Rare</tickerType>
     <statBases>
-      <WorkToBuild>600</WorkToBuild>
-      <Mass>3</Mass>
+      <WorkToBuild>500</WorkToBuild>
+      <Mass>4</Mass>
+      <Flammability>1</Flammability>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">5</StyleDominance>
     </statBases>
     <costList>
-      <Steel>40</Steel>
+      <Steel>30</Steel>
       <ComponentIndustrial>1</ComponentIndustrial>
     </costList>
     <size>(1,1)</size>
+    <pathCost>14</pathCost>
+    <fillPercent>0.2</fillPercent>
     <comps>
       <li Class="CompProperties_Glower">
         <compClass>VFECore.CompGlower_DirtyMapMesh</compClass>
-        <glowRadius>8</glowRadius>
-        <glowColor>(370,370,340,0)</glowColor>
+        <glowRadius>12</glowRadius>
+        <glowColor>(214,148,94,0)</glowColor>
         <colorPickerEnabled>true</colorPickerEnabled>
         <darklightToggle>true</darklightToggle>
       </li>
@@ -114,4 +120,5 @@
       <allowAutoroof>false</allowAutoroof>
     </building>
   </ThingDef>
+
 </Defs>
