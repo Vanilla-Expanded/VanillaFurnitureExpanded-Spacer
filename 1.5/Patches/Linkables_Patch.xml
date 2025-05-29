@@ -99,4 +99,66 @@
         </nomatch>
     </Operation>
 
+  <!-- Television speaker -->
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="TubeTelevision"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="TubeTelevision"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+      <value>
+        <li>VFES_TelevisionSpeaker</li>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="TubeTelevision"]/comps</xpath>
+      <value>
+        <li Class="CompProperties_AffectedByFacilities">
+          <linkableFacilities>
+            <li>VFES_TelevisionSpeaker</li>
+          </linkableFacilities>
+        </li>
+      </value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="FlatscreenTelevision"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="FlatscreenTelevision"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+      <value>
+        <li>VFES_TelevisionSpeaker</li>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="FlatscreenTelevision"]/comps</xpath>
+      <value>
+        <li Class="CompProperties_AffectedByFacilities">
+          <linkableFacilities>
+            <li>VFES_TelevisionSpeaker</li>
+          </linkableFacilities>
+        </li>
+      </value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName = "MegascreenTelevision"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName = "MegascreenTelevision"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+      <value>
+        <li>VFES_TelevisionSpeaker</li>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName = "MegascreenTelevision"]/comps</xpath>
+      <value>
+        <li Class="CompProperties_AffectedByFacilities">
+          <linkableFacilities>
+            <li>VFES_TelevisionSpeaker</li>
+          </linkableFacilities>
+        </li>
+      </value>
+    </nomatch>
+  </Operation>
+
 </Patch>
