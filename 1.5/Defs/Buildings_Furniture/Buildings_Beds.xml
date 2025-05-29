@@ -21,6 +21,7 @@
           <li>VFE_RoyalWardrobe</li>
           <li>Table_IlluminatedEndTable</li>
           <li>Table_IlluminatedDresser</li>
+          <li>VFES_Table_IlluminatedWardrobe</li>
           <li MayRequire="Ludeon.RimWorld.Ideology">SleepAccelerator</li>
           <li>Table_LightEndTable</li> <!-- TODO: Remove in 1.6 -->
         </linkableFacilities>
@@ -129,7 +130,7 @@
       <Flammability>1.0</Flammability>
       <Beauty>8</Beauty>
     </statBases>
-    <stuffCategories>
+    <stuffCategories Inherit="False">
       <li>Metallic</li>
       <li>Woody</li>
     </stuffCategories>
@@ -205,7 +206,7 @@
     <fillPercent>0.4</fillPercent>
     <castEdgeShadows>true</castEdgeShadows>
     <pathCost>42</pathCost>
-    <stuffCategories>
+    <stuffCategories Inherit="False">
       <li>Metallic</li>
       <li>Woody</li>
     </stuffCategories>

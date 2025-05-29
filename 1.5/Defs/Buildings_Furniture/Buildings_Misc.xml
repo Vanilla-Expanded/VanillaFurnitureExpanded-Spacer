@@ -14,6 +14,9 @@
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
     <fillPercent>0.4</fillPercent>
+    <thingCategories Inherit="False">
+      <li>BuildingsMisc</li>
+    </thingCategories>
     <castEdgeShadows>true</castEdgeShadows>
     <costList>
       <Plasteel>20</Plasteel>

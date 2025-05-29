@@ -56,7 +56,12 @@
         <shortCircuitInRain>true</shortCircuitInRain>
         <basePowerConsumption>700</basePowerConsumption>
       </li>
-      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>VFES_TelevisionSpeaker</li>
+        </linkableFacilities>
+      </li>
     </comps>
     <tradeTags>
       <li>Television</li>
