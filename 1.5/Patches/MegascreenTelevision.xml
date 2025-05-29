@@ -1,13 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="MegascreenTelevision"]</xpath>
-		<value>
-			<designationCategory>Joy</designationCategory>
-			<researchPrerequisites>
-				<li>FlatscreenTelevision</li>
-			</researchPrerequisites>
-			<constructionSkillPrerequisite>9</constructionSkillPrerequisite>
-		</value>
+	
+	<Operation Class="PatchOperationSequence">
+		<operations>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="MegascreenTelevision"]</xpath>
+				<value>
+					<designationCategory>Joy</designationCategory>
+					<researchPrerequisites>
+						<li>FlatscreenTelevision</li>
+					</researchPrerequisites>
+					<constructionSkillPrerequisite>9</constructionSkillPrerequisite>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="MegascreenTelevision"]/statBases/WorkToBuild</xpath>
+				<value>
+					<WorkToBuild>60000</WorkToBuild>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="MegascreenTelevision"]/costList</xpath>
+				<value>
+					<costList>
+						<Steel>200</Steel>
+						<ComponentIndustrial>20</ComponentIndustrial>
+						<ComponentSpacer>2</ComponentSpacer>
+					</costList>
+				</value>
+			</li>
+
+		</operations>
 	</Operation>
+	
 </Patch>
