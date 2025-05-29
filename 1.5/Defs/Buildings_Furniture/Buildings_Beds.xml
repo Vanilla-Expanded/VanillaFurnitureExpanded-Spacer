@@ -268,4 +268,70 @@
     </building>
   </ThingDef>
 
+  <ThingDef ParentName="VFE_WardrobeBase">
+    <defName>VFES_Table_IlluminatedWardrobe</defName>
+    <label>illuminated wardrobe</label>
+    <description>A sleek, modern wardrobe with an integrated soft-glow lamp. Gives a small comfort and rest effectiveness bonus to all nearby beds. Placing more than one wardrobe near the same bed has no effect.</description>
+    <graphicData>
+      <texPath>NewThings/Furniture/IlluminatedWardrobe</texPath>
+      <damageData>
+        <rectN>(0,0,2,1.5)</rectN>
+        <rectS>(0,0,2,1.5)</rectS>
+        <rectE>(0,0,1,2.245)</rectE>
+        <rectW>(0,0,1,2.245)</rectW>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <costStuffCount>90</costStuffCount>
+    <stuffCategories Inherit="False">
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <costList>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <statBases>
+      <MaxHitPoints>160</MaxHitPoints>
+      <Mass>24</Mass>
+      <WorkToBuild>2500</WorkToBuild>
+      <Beauty>9</Beauty>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <Comfort>0.05</Comfort>
+          <BedRestEffectiveness>0.03</BedRestEffectiveness>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>6</maxDistance>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>20</basePowerConsumption>
+        <powerUpgrades>
+          <li>
+            <researchProject>ColoredLights</researchProject>
+            <factor>0.5</factor>
+          </li>
+        </powerUpgrades>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Glower">
+        <compClass>VFECore.CompGlower_DirtyMapMesh</compClass>
+        <glowRadius>8.5</glowRadius>
+        <glowColor>(214,148,94,0)</glowColor>
+        <colorPickerEnabled>false</colorPickerEnabled>
+        <darklightToggle>true</darklightToggle>
+      </li>
+    </comps>
+    <building>
+      <paintable>true</paintable>
+    </building>
+    <constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+  </ThingDef>
+
 </Defs>

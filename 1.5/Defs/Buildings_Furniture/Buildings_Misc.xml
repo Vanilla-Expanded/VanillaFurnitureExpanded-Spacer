@@ -121,4 +121,53 @@
     </building>
   </ThingDef>
 
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFES_AirPurifier</defName>
+    <label>air purifier</label>
+    <description>A compact, high-efficiency air purifier that filters out dust, allergens, smoke, and other unwanted particulates while circulating clean, scented air. Improves room cleanliness, slightly boosts mood, and enhances the overall environment.</description>
+    <graphicData>
+      <texPath>NewThings/Misc/AirPurifier</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(2.5, 0.6, 0.1)</volume>
+        <offset>(0, 0, 0.2)</offset>
+      </shadowData>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <fillPercent>0.2</fillPercent>
+    <pathCost>42</pathCost>
+    <passability>PassThroughOnly</passability>
+    <statBases>
+      <WorkToBuild>12000</WorkToBuild>
+      <MaxHitPoints>110</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <Mass>11</Mass>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>250</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <costList>
+      <Steel>20</Steel>
+      <Plasteel>10</Plasteel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <researchPrerequisites>
+      <li>SpacerElectronics</li>
+    </researchPrerequisites>
+    <size>(1,1)</size>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <designationCategory>Misc</designationCategory>
+  </ThingDef>
+
 </Defs>
