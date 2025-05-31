@@ -137,6 +137,7 @@
       </shadowData>
       <drawSize>(1,1)</drawSize>
     </graphicData>
+    <tickerType>Normal</tickerType>
     <altitudeLayer>Building</altitudeLayer>
     <minifiedDef>MinifiedThing</minifiedDef>
     <fillPercent>0.2</fillPercent>
@@ -155,6 +156,14 @@
         <basePowerConsumption>250</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable"/>
+      <li Class="MFSpacer.CompProperties_RemoveGas">
+        <gasTypesToRemove>
+          <li>BlindSmoke</li>
+          <li>ToxGas</li>
+          <li>RotStink</li>
+          <li>DeadlifeDust</li>
+        </gasTypesToRemove>
+      </li>
     </comps>
     <thingCategories>
       <li>BuildingsMisc</li>
