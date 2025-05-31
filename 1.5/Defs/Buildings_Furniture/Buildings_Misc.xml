@@ -110,6 +110,14 @@
       </li>
       <li Class="CompProperties_Breakdownable" />
       <li Class="CompProperties_Flickable" />
+      <li Class="VFECore.CompProperties_ScheduleExtended">
+        <minLight>0</minLight>
+        <maxLight>0.5</maxLight>
+        <offMessage>Off due to sufficient sunlight.</offMessage>
+
+        <disableUnderRoof>true</disableUnderRoof>
+        <disabledDueToRoofMessage>Off due to being under a roof.</disabledDueToRoofMessage>
+      </li>
     </comps>
     <placeWorkers>
       <li>PlaceWorker_NotUnderRoof</li>
