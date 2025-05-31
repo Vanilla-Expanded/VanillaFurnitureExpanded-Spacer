@@ -71,7 +71,7 @@
     <surfaceType>Item</surfaceType>
     <canOverlapZones>false</canOverlapZones>
     <researchPrerequisites>
-      <li>MechaniteRestoration</li>
+      <li>SpacerElectronics</li>
     </researchPrerequisites>
     <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
     <designationCategory>Misc</designationCategory>

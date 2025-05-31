@@ -1,82 +1,58 @@
 ﻿<?Yml version="1.0" encoding="utf8"?>
 <Defs>
-	<ResearchProjectDef>
-		<defName>SpacerFurniture</defName>
-		<label>spacer furniture</label>
-		<tab>VanillaExpanded</tab>
-		<description>Build advanced furniture usually only seen in advanced colonies and glitterworld buildings.</description>
-		<baseCost>1500</baseCost>
-		<techLevel>Spacer</techLevel>
-		<prerequisites>
-			<li>MultiAnalyzer</li>
-			<li>MF_ModernFurniture</li>
-		</prerequisites>
-		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-		<requiredResearchFacilities>
-			<li>MultiAnalyzer</li>
-		</requiredResearchFacilities>
-		<researchViewX>5.00</researchViewX>
-		<researchViewY>3.55</researchViewY>
-		<generalRules>
-  <rulesStrings>
-    <li>subject->furnishing the future</li>
-    <li>subject_story->unveiled furniture designs that blend elegance with advanced functionality, suitable for the most sophisticated of colonies</li>
-    <li>subject_story->introduced living solutions that adapt to their users, combining comfort with cutting-edge technology</li>
-    <li>subject_gerund->redefining space with furniture that's as smart as it is stylish</li>
-  </rulesStrings>
-</generalRules>
-	</ResearchProjectDef>
 
-	<ResearchProjectDef>
-		<defName>SpacerElectronics</defName>
-		<label>spacer electronics</label>
-		<tab>VanillaExpanded</tab>
-		<description>Build advanced electronics usually only seen in advanced colonies and glitterworld buildings.</description>
-		<baseCost>2000</baseCost>
-		<techLevel>Spacer</techLevel>
-		<prerequisites>
-			<li>MultiAnalyzer</li>
-			<li>FlatscreenTelevision</li>
-		</prerequisites>
-		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-		<requiredResearchFacilities>
-			<li>MultiAnalyzer</li>
-		</requiredResearchFacilities>
-		<researchViewX>5.00</researchViewX>
-		<researchViewY>5.65</researchViewY>
-		<generalRules>
-  <rulesStrings>
-    <li>subject->circuitry of the cosmos</li>
-    <li>subject_story->engineered electronics that push the boundaries of what's possible, powering devices that were once the realm of science fiction</li>
-    <li>subject_story->brought glitterworld technologies to the hands of the colonists, elevating everyday experiences with unparalleled efficiency and ease</li>
-    <li>subject_gerund->unlocking the ultimate potential of electronic innovation</li>
-  </rulesStrings>
-</generalRules>
-	</ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>SpacerFurniture</defName>
+    <label>spacer furniture</label>
+    <tab>VanillaExpanded</tab>
+    <description>Build advanced furniture usually only seen in advanced colonies and glitterworld buildings.</description>
+    <baseCost>1500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>MultiAnalyzer</li>
+      <li>MF_ModernFurniture</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>3.55</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->furnishing the future</li>
+        <li>subject_story->unveiled furniture designs that blend elegance with advanced functionality, suitable for the most sophisticated of colonies</li>
+        <li>subject_story->introduced living solutions that adapt to their users, combining comfort with cutting-edge technology</li>
+        <li>subject_gerund->redefining space with furniture that's as smart as it is stylish</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
 
-	<ResearchProjectDef>
-		<defName>MechaniteRestoration</defName>
-		<label>mechanite restoration</label>
-		<tab>VanillaExpanded</tab>
-		<description>Use ultratech mechanites to aid in restoration of objects by constructing a mechanite repair shelf.</description>
-		<baseCost>3000</baseCost>
-		<techLevel>Ultra</techLevel>
-		<prerequisites>
-			<li>SpacerElectronics</li>
-		</prerequisites>
-		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-		<requiredResearchFacilities>
-			<li>MultiAnalyzer</li>
-		</requiredResearchFacilities>
-		<researchViewX>6.00</researchViewX>
-		<researchViewY>5.65</researchViewY>
-		<generalRules>
-  <rulesStrings>
-    <li>subject->the microarchitects of renewal</li>
-    <li>subject_story->harnessed ultratech mechanites for the restoration and maintenance of objects, breathing life back into the worn and aged</li>
-    <li>subject_story->developed the mechanite repair shelf, a pinnacle of repair technology, where nanites work tirelessly to reverse damage and decay</li>
-    <li>subject_gerund->embracing the tiny titans of reconstruction for a world renewed</li>
-  </rulesStrings>
-</generalRules>
-	</ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>SpacerElectronics</defName>
+    <label>spacer electronics</label>
+    <tab>VanillaExpanded</tab>
+    <description>Build advanced electronics usually only seen in advanced colonies and glitterworld buildings.</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>MultiAnalyzer</li>
+      <li>FlatscreenTelevision</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>5.65</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->circuitry of the cosmos</li>
+        <li>subject_story->engineered electronics that push the boundaries of what's possible, powering devices that were once the realm of science fiction</li>
+        <li>subject_story->brought glitterworld technologies to the hands of the colonists, elevating everyday experiences with unparalleled efficiency and ease</li>
+        <li>subject_gerund->unlocking the ultimate potential of electronic innovation</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+
 </Defs>
