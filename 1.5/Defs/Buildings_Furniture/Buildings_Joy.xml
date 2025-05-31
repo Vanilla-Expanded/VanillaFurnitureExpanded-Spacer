@@ -85,13 +85,14 @@
     <graphicData>
       <texPath>NewThings/Joy/WallMountedTV</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-      <shadowData>
-        <volume>(2.5, 0.6, 0.1)</volume>
-        <offset>(0, 0, 0.2)</offset>
-      </shadowData>
-      <drawSize>(4,2)</drawSize>
+      <drawOffsetNorth>(0,0,0.8)</drawOffsetNorth>
+      <drawOffsetSouth>(0,0,-0.8)</drawOffsetSouth>
+      <drawOffsetWest>(-0.8,0,0)</drawOffsetWest>
+      <drawOffsetEast>(0.8,0,0)</drawOffsetEast>
+      <drawSize>(2,1)</drawSize>
     </graphicData>
-    <altitudeLayer>Building</altitudeLayer>
+    <uiIconPath>NewThings/Joy/WallMountedTV_MenuIcon</uiIconPath>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
     <rotatable>true</rotatable>
     <minifiedDef>MinifiedThing</minifiedDef>
@@ -121,7 +122,7 @@
       <joyKind>Television</joyKind>
       <spawnedConceptLearnOpportunity>TVForSickPeople</spawnedConceptLearnOpportunity>
       <boughtConceptLearnOpportunity>TVForSickPeople</boughtConceptLearnOpportunity>
-      <watchBuildingStandDistanceRange>3~6</watchBuildingStandDistanceRange>
+      <watchBuildingStandDistanceRange>-1~-4</watchBuildingStandDistanceRange>
       <watchBuildingStandRectWidth>4</watchBuildingStandRectWidth>
       <watchBuildingInSameRoom>true</watchBuildingInSameRoom>
       <isEdifice>false</isEdifice>
@@ -129,7 +130,7 @@
     </building>
     <placeWorkers>
       <li>PlaceWorker_WatchArea</li>
-      <li>Placeworker_AttachedToWall</li>
+      <li>VFECore.PlaceWorker_AttachedToWallMultiCell</li>
     </placeWorkers>
     <comps>
       <li Class="CompProperties_Power">
