@@ -1,46 +1,45 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace MFSpacer
+namespace MFSpacer;
+
+public class CompPassiveJoyTable : ThingComp
 {
-    public class CompPassiveJoyTable : ThingComp
+    private const int JoyTickInterval = 10;
+
+    private CompPowerTrader powerTrader;
+
+    public override void CompTick()
     {
-        private const int JoyTickInterval = 10;
+        if (parent.IsHashIntervalTick(JoyTickInterval) && (powerTrader == null || powerTrader.PowerOn))
+            HandlePawnJoy();
+    }
 
-        private CompPowerTrader powerTrader;
+    public override void PostSpawnSetup(bool respawningAfterLoad)
+    {
+        powerTrader = parent.GetComp<CompPowerTrader>();
+    }
 
-        public override void CompTick()
+    public void HandlePawnJoy()
+    {
+        if (parent.def.size is { x: 1, z: 1 })
         {
-            if (parent.IsHashIntervalTick(JoyTickInterval) && (powerTrader == null || powerTrader.PowerOn))
-                HandlePawnJoy();
+            // Using this method for a 1x1 building is faster than GenAdjFast.AdjacentCellsCardinal
+            for (var index = 0; index < 4; index++)
+                TryGivePawnJoy((parent.Position + GenAdj.CardinalDirections[index]).GetFirstPawn(parent.Map));
         }
-
-        public override void PostSpawnSetup(bool respawningAfterLoad)
+        else
         {
-            powerTrader = parent.GetComp<CompPowerTrader>();
+            // This method is about as fast (or even very slightly faster) than caching offsets for a 2x2 building
+            var cells = GenAdjFast.AdjacentCellsCardinal(parent);
+            for (var index = 0; index < cells.Count; index++)
+                TryGivePawnJoy(cells[index].GetFirstPawn(parent.Map));
         }
+    }
 
-        public void HandlePawnJoy()
-        {
-            if (parent.def.size is { x: 1, z: 1 })
-            {
-                // Using this method for a 1x1 building is faster than GenAdjFast.AdjacentCellsCardinal
-                for (var index = 0; index < 4; index++)
-                    TryGivePawnJoy((parent.Position + GenAdj.CardinalDirections[index]).GetFirstPawn(parent.Map));
-            }
-            else
-            {
-                // This method is about as fast (or even very slightly faster) than caching offsets for a 2x2 building
-                var cells = GenAdjFast.AdjacentCellsCardinal(parent);
-                for (var index = 0; index < cells.Count; index++)
-                    TryGivePawnJoy(cells[index].GetFirstPawn(parent.Map));
-            }
-        }
-
-        private void TryGivePawnJoy(Pawn pawn)
-        {
-            if (pawn != null && pawn.health.capacities.CapableOf(PawnCapacityDefOf.Sight))
-                pawn.needs.joy?.GainJoy(parent.GetStatValue(StatDefOf.JoyGainFactor) * (JoyTickInterval * JoyTunings.BaseJoyGainPerHour / GenDate.TicksPerHour), parent.def.building.joyKind);
-        }
+    private void TryGivePawnJoy(Pawn pawn)
+    {
+        if (pawn != null && pawn.health.capacities.CapableOf(PawnCapacityDefOf.Sight))
+            pawn.needs.joy?.GainJoy(parent.GetStatValue(StatDefOf.JoyGainFactor) * (JoyTickInterval * JoyTunings.BaseJoyGainPerHour / GenDate.TicksPerHour), parent.def.building.joyKind);
     }
 }
