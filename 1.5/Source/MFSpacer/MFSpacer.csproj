@@ -33,8 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CompPassiveJoyTable.cs" />
     <Compile Include="Building_RepairStored.cs" />
+    <Compile Include="CompPassiveJoyTable.cs" />
+    <Compile Include="CompProperties_RepairStored.cs" />
+    <Compile Include="CompRepairStored.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="CompProperties_RemoveGas.cs" />
     <Compile Include="CompRemoveGas.cs" />

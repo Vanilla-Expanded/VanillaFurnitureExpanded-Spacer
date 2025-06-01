@@ -5,6 +5,9 @@
     <defName>Shelf_RepairRack</defName>
     <label>repair shelf</label>
     <description>A powered high-tech shelf that utilises mechanites to slowly heal any damage on any clothing, armour or weapons placed on it.</description>
+    <!-- The repair is now tied to the comp, rather than to the building itself. -->
+    <!-- The building class is optional, and only makes the comp know that an item was added/removed to instantly forbid the item and turn on/off the effecter. -->
+    <!-- If using a different thingClass, I'd recommend making a custom one that call CompRepairStored.Notify_ReceivedThing/Notify_LostThing where appropriate. -->
     <thingClass>MFSpacer.Building_RepairStored</thingClass>
     <graphicData>
       <texPath>NewThings/Misc/RepairShelf</texPath>
@@ -41,6 +44,12 @@
       </li>
       <li Class="CompProperties_Breakdownable" />
       <li Class="CompProperties_Flickable" />
+      <li Class="MFSpacer.CompProperties_RepairStored">
+        <effecterDef>VFES_BlueSmoke</effecterDef>
+
+        <repairAmount>1</repairAmount>
+        <repairInterval>2500</repairInterval>
+      </li>
     </comps>
     <tickerType>Normal</tickerType>
     <building>

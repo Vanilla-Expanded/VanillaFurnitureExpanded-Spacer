@@ -1,78 +1,32 @@
-﻿using System.Collections.Generic;
-using RimWorld;
-using UnityEngine;
+﻿using RimWorld;
 using Verse;
 
-namespace MFSpacer
+namespace MFSpacer;
+
+public class Building_RepairStored : Building_Storage
 {
-    [StaticConstructorOnStartup]
-    public class Building_RepairStored : Building_Storage
+    private CompRepairStored repairComp;
+
+    public override void SpawnSetup(Map map, bool respawningAfterLoad)
     {
-        private CompPowerTrader powerComp;
-        private bool shouldAutoForbid = true;
-        private Texture2D cachedCommandTex;
+        base.SpawnSetup(map, respawningAfterLoad);
 
-        private Texture2D CommandTex => cachedCommandTex ??= ContentFinder<Texture2D>.Get("Icons/Forbidden");
+        repairComp = GetComp<CompRepairStored>();
+        if (repairComp == null)
+            Log.Error($"{nameof(Building_RepairStored)} requires {nameof(CompRepairStored)} to work. {nameof(Building_RepairStored)} is also fully optional and only exists to notify the comp that an item was added/removed to/from storage.");
+    }
 
-        public override void ExposeData()
-        {
-            base.ExposeData();
+    public override void Notify_ReceivedThing(Thing newItem)
+    {
+        base.Notify_ReceivedThing(newItem);
 
-            Scribe_Values.Look(ref shouldAutoForbid, "shouldAutoForbid", true);
-        }
+        repairComp.Notify_ReceivedThing(newItem);
+    }
 
-        public override void SpawnSetup(Map map, bool respawningAfterLoad)
-        {
-            base.SpawnSetup(map, respawningAfterLoad);
+    public override void Notify_LostThing(Thing newItem)
+    {
+        base.Notify_LostThing(newItem);
 
-            powerComp = GetComp<CompPowerTrader>();
-        }
-
-        public override void Tick()
-        {
-            if (powerComp == null || powerComp.PowerOn)
-            {
-                if (this.IsHashIntervalTick(2500))
-                {
-                    foreach (var thing in GetSlotGroup().HeldThings)
-                    {
-                        if (thing.HitPoints < thing.MaxHitPoints && GetParentStoreSettings().AllowedToAccept(thing))
-                            thing.HitPoints++;
-
-                        if (shouldAutoForbid)
-                            thing.SetForbidden(thing.HitPoints < thing.MaxHitPoints);
-                    }
-                }
-            }
-
-            base.Tick();
-        }
-
-        public override void Notify_ReceivedThing(Thing newItem)
-        {
-            base.Notify_ReceivedThing(newItem);
-
-            if (shouldAutoForbid)
-                newItem.SetForbidden(newItem.HitPoints < newItem.MaxHitPoints);
-        }
-
-        public override IEnumerable<Gizmo> GetGizmos()
-        {
-            foreach (var gizmo in base.GetGizmos())
-                yield return gizmo;
-
-            if (Faction == Faction.OfPlayer)
-            {
-                yield return new Command_Toggle
-                {
-                    hotKey = KeyBindingDefOf.Command_TogglePower,
-                    icon = CommandTex,
-                    defaultLabel = "EnableAutoForbid".Translate(),
-                    defaultDesc = "EnableAutoForbidExplanation".Translate(),
-                    isActive = () => shouldAutoForbid,
-                    toggleAction = () => shouldAutoForbid = !shouldAutoForbid
-                };
-            }
-        }
+        repairComp.Notify_LostThing(newItem);
     }
 }
