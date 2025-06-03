@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Furniture Expanded</li>
+    </mods>
+    <nomatch Class="PatchOperationReplace">
+      <!-- Replace any "MechaniteRestoration" research projects with normal "SpacerElectronics" project. -->
+      <xpath>Defs/ResearchProjectDef[defName="SpacerFurniture"]/prerequisites/li[text()="MF_ModernFurniture"]</xpath>
+      <value>
+        <li>ComplexFurniture</li>
+      </value>
+    </nomatch>
+  </Operation>
+</Patch>

@@ -4,15 +4,6 @@
   <!-- Illuminated bed linkables -->
 
   <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName = "Bed_Kingsize"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
-    <value>
-      <li>Table_IlluminatedEndTable</li>
-      <li>Table_IlluminatedDresser</li>
-      <li>VFES_Table_IlluminatedWardrobe</li>
-    </value>
-  </Operation>
-
-  <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[@Name = "BasicBedBase"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
     <value>
       <li>Table_IlluminatedEndTable</li>
@@ -48,50 +39,15 @@
     </value>
   </Operation>
 
-  <!-- Backwards compatibility with previous versions, made for safety in case of issues during updating. -->
-  <!-- Parts of them will need removing in the future, either some time after Furniture Core updates, or in 1.6. -->
-  <!-- When updating, remove the conditional check and only include the "match" branch of every patch. -->
-
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[@Name = "VFE_ChiseledBedBase"]</xpath>
-    <match Class="PatchOperationAdd">
-      <xpath>Defs/ThingDef[@Name = "VFE_ChiseledBedBase"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
-      <value>
-        <li>Table_IlluminatedEndTable</li>
-        <li>Table_IlluminatedDresser</li>
-        <li>VFES_Table_IlluminatedWardrobe</li>
-      </value>
-    </match>
-    <!-- Before an update, the slab (now chiseled) beds didn't include illuminated linkables, so no nomatch branch. -->
-  </Operation>
-
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[@Name = "VFE_SimpleBedBase"]</xpath>
-    <match Class="PatchOperationAdd">
-      <xpath>Defs/ThingDef[@Name = "VFE_SimpleBedBase"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
-      <value>
-        <li>Table_IlluminatedEndTable</li>
-        <li>Table_IlluminatedDresser</li>
-        <li>VFES_Table_IlluminatedWardrobe</li>
-      </value>
-    </match>
-    <!-- Before an update, the simple beds didn't include illuminated linkables, so no nomatch branch. -->
-  </Operation>
-
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[@Name = "VFE_ErgonomicBedBase"]</xpath>
-    <match Class="PatchOperationAdd">
-      <xpath>Defs/ThingDef[@Name = "VFE_ErgonomicBedBase"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
-      <value>
-        <li>Table_IlluminatedEndTable</li>
-        <li>Table_IlluminatedDresser</li>
-        <li>VFES_Table_IlluminatedWardrobe</li>
-      </value>
-    </match>
-    <nomatch Class="PatchOperationSequence">
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Furniture Expanded</li>
+    </mods>
+    <match Class="PatchOperationSequence">
       <operations>
+
         <li Class="PatchOperationAdd">
-          <xpath>Defs/ThingDef[defName = "Bed_Ergonomic"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+          <xpath>Defs/ThingDef[defName = "Bed_Kingsize"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
           <value>
             <li>Table_IlluminatedEndTable</li>
             <li>Table_IlluminatedDresser</li>
@@ -99,16 +55,73 @@
           </value>
         </li>
 
-        <li Class="PatchOperationAdd">
-          <xpath>Defs/ThingDef[defName = "Bed_DoubleErgonomic"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
-          <value>
-            <li>Table_IlluminatedEndTable</li>
-            <li>Table_IlluminatedDresser</li>
-            <li>VFES_Table_IlluminatedWardrobe</li>
-          </value>
+        <!-- Backwards compatibility with previous versions, made for safety in case of issues during updating. -->
+        <!-- Parts of them will need removing in the future, either some time after Furniture Core updates, or in 1.6. -->
+        <!-- When updating, remove the conditional check and only include the "match" branch of every patch. -->
+        
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[@Name = "VFE_ChiseledBedBase"]</xpath>
+          <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[@Name = "VFE_ChiseledBedBase"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+            <value>
+              <li>Table_IlluminatedEndTable</li>
+              <li>Table_IlluminatedDresser</li>
+              <li>VFES_Table_IlluminatedWardrobe</li>
+            </value>
+          </match>
+          <!-- Before an update, the slab (now chiseled) beds didn't include illuminated linkables, so no nomatch branch. -->
         </li>
+  
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[@Name = "VFE_SimpleBedBase"]</xpath>
+          <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[@Name = "VFE_SimpleBedBase"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+            <value>
+              <li>Table_IlluminatedEndTable</li>
+              <li>Table_IlluminatedDresser</li>
+              <li>VFES_Table_IlluminatedWardrobe</li>
+            </value>
+          </match>
+          <!-- Before an update, the simple beds didn't include illuminated linkables, so no nomatch branch. -->
+        </li>
+  
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[@Name = "VFE_ErgonomicBedBase"]</xpath>
+          <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[@Name = "VFE_ErgonomicBedBase"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+            <value>
+              <li>Table_IlluminatedEndTable</li>
+              <li>Table_IlluminatedDresser</li>
+              <li>VFES_Table_IlluminatedWardrobe</li>
+            </value>
+          </match>
+          <nomatch Class="PatchOperationSequence">
+            <operations>
+
+              <li Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName = "Bed_Ergonomic"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+                <value>
+                  <li>Table_IlluminatedEndTable</li>
+                  <li>Table_IlluminatedDresser</li>
+                  <li>VFES_Table_IlluminatedWardrobe</li>
+                </value>
+              </li>
+  
+              <li Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName = "Bed_DoubleErgonomic"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+                <value>
+                  <li>Table_IlluminatedEndTable</li>
+                  <li>Table_IlluminatedDresser</li>
+                  <li>VFES_Table_IlluminatedWardrobe</li>
+                </value>
+              </li>
+
+            </operations>
+          </nomatch>
+        </li>
+
       </operations>
-    </nomatch>
+    </match>
   </Operation>
 
   <!-- Television speaker -->

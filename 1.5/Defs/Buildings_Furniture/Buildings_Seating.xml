@@ -83,7 +83,7 @@
       <Comfort>0.95</Comfort>
     </statBases>
     <comps>
-      <li Class="CompProperties_AffectedByFacilities">
+      <li Class="CompProperties_AffectedByFacilities" MayRequire="VanillaExpanded.VFECore">
         <linkableFacilities>
           <li>VFE_CoffeeTable</li>
         </linkableFacilities>
@@ -143,7 +143,7 @@
       <Comfort>0.95</Comfort>
     </statBases>
     <comps>
-      <li Class="CompProperties_AffectedByFacilities">
+      <li Class="CompProperties_AffectedByFacilities" MayRequire="VanillaExpanded.VFECore">
         <linkableFacilities>
           <li>VFE_CoffeeTable</li>
         </linkableFacilities>

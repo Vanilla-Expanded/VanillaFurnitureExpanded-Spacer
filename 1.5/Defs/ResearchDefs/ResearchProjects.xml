@@ -10,6 +10,7 @@
     <techLevel>Spacer</techLevel>
     <prerequisites>
       <li>MultiAnalyzer</li>
+      <!-- Replaced to complex furniture if Vanilla Furniture Expanded is not enabled. -->
       <li>MF_ModernFurniture</li>
     </prerequisites>
     <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
