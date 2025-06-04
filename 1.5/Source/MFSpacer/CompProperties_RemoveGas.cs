@@ -6,6 +6,7 @@ namespace MFSpacer;
 
 public class CompProperties_RemoveGas : CompProperties
 {
+    public bool requiresIndoors = false;
     public List<GasType> gasTypesToRemove = null;
     public uint Mask { get; protected set; } = uint.MaxValue;
 

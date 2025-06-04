@@ -19,7 +19,7 @@ public class CompRemoveGas : ThingComp
 
     public override void CompTick()
     {
-        if (parent.Spawned && (powerTrader == null || powerTrader.PowerOn))
+        if (parent.Spawned && (powerTrader == null || powerTrader.PowerOn) && (!Props.requiresIndoors || !parent.IsOutside()))
         {
             var gasGrid = GasDensityField(parent.Map.gasGrid);
             foreach (var pos in parent.OccupiedRect())

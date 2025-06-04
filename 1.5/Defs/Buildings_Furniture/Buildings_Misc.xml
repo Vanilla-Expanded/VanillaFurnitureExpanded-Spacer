@@ -181,12 +181,21 @@
       </li>
       <li Class="CompProperties_Flickable"/>
       <li Class="MFSpacer.CompProperties_RemoveGas">
+        <requiresIndoors>true</requiresIndoors>
         <gasTypesToRemove>
           <li>BlindSmoke</li>
           <li>ToxGas</li>
           <li>RotStink</li>
           <li>DeadlifeDust</li>
         </gasTypesToRemove>
+      </li>
+      <li Class="MFSpacer.CompProperties_StatsWhenPowered">
+        <poweredStatOffsets>
+          <Cleanliness>20</Cleanliness>
+        </poweredStatOffsets>
+        <unpoweredStatOffsets>
+          <Cleanliness>-20</Cleanliness>
+        </unpoweredStatOffsets>
       </li>
     </comps>
     <thingCategories>
