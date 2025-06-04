@@ -35,6 +35,7 @@
       <li>Leathery</li>
     </stuffCategories>
     <costStuffCount>100</costStuffCount>
+    <uiOrder>2410</uiOrder>
     <costList>
       <Steel>30</Steel>
       <ComponentIndustrial>2</ComponentIndustrial>
@@ -52,6 +53,7 @@
       <li>SpacerFurniture</li>
     </researchPrerequisites>
     <designationCategory>Furniture</designationCategory>
+    <techLevel>Spacer</techLevel>
   </ThingDef>
 
   <ThingDef ParentName="FurnitureWithQualityBase">
@@ -69,7 +71,7 @@
         <rectW>(0.15625,0,0.84375,0.625)</rectW>
       </damageData>
       <shadowData>
-        <volume>(0.3, 0.33, 0.3)</volume>
+        <volume>(0.4, 0.33, 0.4)</volume>
       </shadowData>
     </graphicData>
     <uiIconScale>0.9</uiIconScale>
@@ -112,6 +114,7 @@
       <isSittable>true</isSittable>
       <destroySound>BuildingDestroyed_Soft_Small</destroySound>
     </building>
+    <techLevel>Spacer</techLevel>
   </ThingDef>
 
   <ThingDef ParentName="FurnitureWithQualityBase">
@@ -123,13 +126,13 @@
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(3,3)</drawSize>
       <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
+        <rectN>(0,0,2,0.75)</rectN>
+        <rectS>(0,0,2,1)</rectS>
+        <rectE>(0,0,0.88,2)</rectE>
+        <rectW>(0.12,0,0.88,2)</rectW>
       </damageData>
       <shadowData>
-        <volume>(0.3, 0.33, 0.3)</volume>
+        <volume>(1.8, 0.33, 0.4)</volume>
       </shadowData>
     </graphicData>
     <uiIconScale>0.9</uiIconScale>
@@ -167,13 +170,14 @@
     <size>(2,1)</size>
     <designationHotKey>Misc8</designationHotKey>
     <defaultPlacingRot>South</defaultPlacingRot>
-    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     <uiOrder>2430</uiOrder>
     <building>
       <isSittable>true</isSittable>
       <multiSittable>true</multiSittable>
       <destroySound>BuildingDestroyed_Soft_Small</destroySound>
     </building>
+    <techLevel>Spacer</techLevel>
   </ThingDef>
 
 </Defs>

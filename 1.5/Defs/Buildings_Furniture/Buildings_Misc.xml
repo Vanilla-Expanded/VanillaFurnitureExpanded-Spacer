@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <ThingDef ParentName="FurnitureWithQualityBase">
+  <ThingDef ParentName="FurnitureBase">
     <defName>Shelf_RepairRack</defName>
-    <label>repair shelf</label>
-    <description>A powered high-tech shelf that utilises mechanites to slowly heal any damage on any clothing, armour or weapons placed on it.</description>
+    <label>mechanite repair shelf</label>
+    <description>A high-tech shelf for storing apparel or weapons. Items stored on this shelf will benefit from nanoswarms of mechanites that will slowly repair any damage and deterioration. The process requires a large amount of power and takes a significant amount of time.</description>
     <!-- The repair is now tied to the comp, rather than to the building itself. -->
     <!-- The building class is optional, and only makes the comp know that an item was added/removed to instantly forbid the item and turn on/off the effecter. -->
     <!-- If using a different thingClass, I'd recommend making a custom one that call CompRepairStored.Notify_ReceivedThing/Notify_LostThing where appropriate. -->
@@ -12,7 +12,7 @@
     <graphicData>
       <texPath>NewThings/Misc/RepairShelf</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(1.5,1.5)</drawSize>
+      <drawSize>(2,2)</drawSize>
     </graphicData>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
@@ -21,6 +21,7 @@
       <li>BuildingsMisc</li>
     </thingCategories>
     <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
     <costList>
       <Plasteel>20</Plasteel>
       <ComponentSpacer>3</ComponentSpacer>
@@ -76,7 +77,6 @@
     <inspectorTabs>
       <li>ITab_Storage</li>
     </inspectorTabs>
-    <staticSunShadowHeight>0.5</staticSunShadowHeight>
     <surfaceType>Item</surfaceType>
     <canOverlapZones>false</canOverlapZones>
     <researchPrerequisites>
@@ -84,6 +84,7 @@
     </researchPrerequisites>
     <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
     <designationCategory>Misc</designationCategory>
+    <techLevel>Ultra</techLevel>
   </ThingDef>
 
   <ThingDef ParentName="LampBase">
@@ -97,6 +98,7 @@
     </graphicData>
     <tickerType>Rare</tickerType>
     <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
       <WorkToBuild>500</WorkToBuild>
       <Mass>4</Mass>
       <Flammability>1</Flammability>
@@ -109,6 +111,7 @@
     <size>(1,1)</size>
     <pathCost>14</pathCost>
     <fillPercent>0.2</fillPercent>
+    <uiOrder>2992</uiOrder>
     <comps>
       <li Class="CompProperties_Glower">
         <compClass>VFECore.CompGlower_DirtyMapMesh</compClass>
@@ -139,6 +142,7 @@
     <building>
       <allowAutoroof>false</allowAutoroof>
     </building>
+    <techLevel>Spacer</techLevel>
   </ThingDef>
 
   <ThingDef ParentName="BuildingBase">
@@ -148,11 +152,14 @@
     <graphicData>
       <texPath>NewThings/Misc/AirPurifier</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <shadowData>
-        <volume>(2.5, 0.6, 0.1)</volume>
-        <offset>(0, 0, 0.2)</offset>
-      </shadowData>
       <drawSize>(1,1)</drawSize>
+      <damageData>
+        <rect>(0.3,0,0.4,0.85)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(0.3, 0.17, 0.3)</volume>
+        <offset>(0,0,-0.25)</offset>
+      </shadowData>
     </graphicData>
     <tickerType>Normal</tickerType>
     <altitudeLayer>Building</altitudeLayer>
@@ -195,8 +202,10 @@
       <li>SpacerElectronics</li>
     </researchPrerequisites>
     <size>(1,1)</size>
+    <rotatable>false</rotatable>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     <designationCategory>Misc</designationCategory>
+    <techLevel>Spacer</techLevel>
   </ThingDef>
 
 </Defs>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <ThingDef Name="VFES_AdvancedBedBase" ParentName="BedWithQualityBase" Abstract="True">
+  <ThingDef Name="VFES_AdvancedBedBase" ParentName="ArtableBedBase" Abstract="True">
     <statBases>
       <Flammability>1.0</Flammability>
       <BedRestEffectiveness>1.2</BedRestEffectiveness>
@@ -120,15 +120,25 @@
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(1,1)</drawSize>
       <shadowData>
-        <volume>(0.3, 0.6, 0.3)</volume>
+        <volume>(0.45, 0.6, 0.45)</volume>
       </shadowData>
+      <damageData>
+        <rectN>(0.16,0,0.68,1)</rectN>
+        <rectS>(0.16,0,0.68,1)</rectS>
+        <rectE>(0.19,0,0.55,1)</rectE>
+        <rectW>(0.23,0,0.55,1)</rectW>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
     </graphicData>
     <statBases>
-      <MaxHitPoints>85</MaxHitPoints>
+      <MaxHitPoints>80</MaxHitPoints>
       <WorkToBuild>1800</WorkToBuild>
-      <Mass>8</Mass>
+      <Mass>6</Mass>
       <Flammability>1.0</Flammability>
-      <Beauty>8</Beauty>
+      <Beauty>4</Beauty>
     </statBases>
     <stuffCategories Inherit="False">
       <li>Metallic</li>
@@ -147,6 +157,7 @@
     <researchPrerequisites>
       <li>SpacerFurniture</li>
     </researchPrerequisites>
+    <uiOrder>2060</uiOrder>
     <comps>
       <li Class="CompProperties_Facility">
         <statOffsets>
@@ -183,6 +194,7 @@
     <building>
       <paintable>true</paintable>
     </building>
+    <techLevel>Industrial</techLevel>
   </ThingDef>
 
   <ThingDef ParentName="ArtableFurnitureBase">
@@ -233,6 +245,7 @@
     <researchPrerequisites>
       <li>SpacerFurniture</li>
     </researchPrerequisites>
+    <uiOrder>2070</uiOrder>
     <comps>
       <li Class="CompProperties_Facility">
         <statOffsets>
@@ -267,6 +280,7 @@
     <building>
       <paintable>true</paintable>
     </building>
+    <techLevel>Industrial</techLevel>
   </ThingDef>
 
   <ThingDef ParentName="ArtableFurnitureBase">
@@ -327,7 +341,7 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>true</shortCircuitInRain>
-        <basePowerConsumption>20</basePowerConsumption>
+        <basePowerConsumption>25</basePowerConsumption>
         <powerUpgrades>
           <li>
             <researchProject>ColoredLights</researchProject>
@@ -355,6 +369,7 @@
     </researchPrerequisites>
     <constructionSkillPrerequisite>7</constructionSkillPrerequisite>
     <designationCategory>Furniture</designationCategory>
+    <techLevel>Industrial</techLevel>
   </ThingDef>
 
 </Defs>

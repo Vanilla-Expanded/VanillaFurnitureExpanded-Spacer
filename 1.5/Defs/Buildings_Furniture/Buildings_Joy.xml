@@ -9,7 +9,7 @@
       <texPath>NewThings/Joy/HyperscreenTV</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shadowData>
-        <volume>(2.5, 0.6, 0.1)</volume>
+        <volume>(3.5, 0.6, 0.25)</volume>
         <offset>(0, 0, 0.2)</offset>
       </shadowData>
       <drawSize>(4,2)</drawSize>
@@ -76,6 +76,7 @@
     </costList>
     <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
     <designationCategory>Joy</designationCategory>
+    <techLevel>Spacer</techLevel>
   </ThingDef>
 
   <ThingDef ParentName="BuildingBase">
@@ -90,6 +91,14 @@
       <drawOffsetWest>(-0.8,0,0)</drawOffsetWest>
       <drawOffsetEast>(0.8,0,0)</drawOffsetEast>
       <drawSize>(2,1)</drawSize>
+      <damageData>
+        <enabled>false</enabled>
+        <!-- I've included the damage date that matches the graphic, if someone decides to enable it. -->
+        <rectN>(0.19,0.8,1.62,0.43)</rectN>
+        <rectS>(0.19,0,1.62,0.25)</rectS>
+        <rectE>(0.8,0.15,0.2,1.7)</rectE>
+        <rectW>(0,0.15,0.2,1.7)</rectW>
+      </damageData>
     </graphicData>
     <uiIconPath>NewThings/Joy/WallMountedTV_MenuIcon</uiIconPath>
     <altitudeLayer>BuildingOnTop</altitudeLayer>
@@ -107,12 +116,11 @@
       <li>RewardStandardQualitySuper</li>
     </thingSetMakerTags>
     <statBases>
-      <WorkToBuild>90000</WorkToBuild>
+      <WorkToBuild>45000</WorkToBuild>
       <MaxHitPoints>75</MaxHitPoints>
       <Flammability>1.0</Flammability>
       <Mass>7</Mass>
       <JoyGainFactor>1.4</JoyGainFactor>
-      <Beauty>5</Beauty>
     </statBases>
     <pathCost>0</pathCost>
     <passability>Standable</passability>
@@ -152,12 +160,13 @@
       <li>SpacerElectronics</li>
     </researchPrerequisites>
     <costList>
-      <Steel>240</Steel>
-      <ComponentIndustrial>20</ComponentIndustrial>
-      <ComponentSpacer>6</ComponentSpacer>
+      <Steel>130</Steel>
+      <ComponentIndustrial>16</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
     </costList>
-    <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     <designationCategory>Joy</designationCategory>
+    <techLevel>Spacer</techLevel>
   </ThingDef>
 
   <ThingDef ParentName="BuildingBase">
@@ -167,9 +176,14 @@
     <graphicData>
       <texPath>NewThings/Joy/TelevisionSpeaker</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
+      <damageData>
+        <rectN>(0.19,0,0.62,1)</rectN>
+        <rectS>(0.19,0,0.62,1)</rectS>
+        <rectE>(0.19,0,0.62,1)</rectE>
+        <rectW>(0.19,0,0.62,1)</rectW>
+      </damageData>
       <shadowData>
-        <volume>(2.5, 0.6, 0.1)</volume>
-        <offset>(0, 0, 0.2)</offset>
+        <volume>(0.45, 0.25, 0.45)</volume>
       </shadowData>
       <drawSize>(1,1)</drawSize>
     </graphicData>
@@ -218,6 +232,7 @@
     </costList>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     <designationCategory>Joy</designationCategory>
+    <techLevel>Spacer</techLevel>
   </ThingDef>
 
 </Defs>
