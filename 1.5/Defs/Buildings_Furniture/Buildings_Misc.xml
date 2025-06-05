@@ -189,13 +189,18 @@
           <li>DeadlifeDust</li>
         </gasTypesToRemove>
       </li>
-      <li Class="MFSpacer.CompProperties_StatsWhenPowered">
+      <li Class="VFECore.CompProperties_StatsWhenPowered">
         <poweredStatOffsets>
           <Cleanliness>20</Cleanliness>
         </poweredStatOffsets>
-        <unpoweredStatOffsets>
-          <Cleanliness>-20</Cleanliness>
-        </unpoweredStatOffsets>
+        <onlyWorksIndoors>true</onlyWorksIndoors>
+        <!-- The room stats aren't recalculated unless something forces the game to re-cache it, -->
+        <!-- so we need a way to force it ourselves if we're changing a stat that affects a room. -->
+        <clearRoomCacheOnPowerChange>true</clearRoomCacheOnPowerChange>
+        <!-- Normally we wouldn't clear the stat, but since this stat directly affects -->
+        <clearStatCacheOnPowerChange>
+          <li>Cleanliness</li>
+        </clearStatCacheOnPowerChange>
       </li>
     </comps>
     <thingCategories>
