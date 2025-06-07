@@ -74,6 +74,10 @@
         </filter>
       </fixedStorageSettings>
     </building>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <tradeability>Sellable</tradeability>
     <inspectorTabs>
       <li>ITab_Storage</li>
     </inspectorTabs>
