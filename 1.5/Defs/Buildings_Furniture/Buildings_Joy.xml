@@ -230,6 +230,11 @@
       <ComponentIndustrial>3</ComponentIndustrial>
       <ComponentSpacer>1</ComponentSpacer>
     </costList>
+    <thingCategories>
+      <!-- Put it in the furniture tab in storage, but also allow it to be sold to/bought from traders as normal furniture. -->
+      <!-- Alternatives would be either adding more trader entries, or diluting trader TV pool with the speaker. -->
+      <li>BuildingsFurniture</li>
+    </thingCategories>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     <designationCategory>Joy</designationCategory>
     <techLevel>Spacer</techLevel>

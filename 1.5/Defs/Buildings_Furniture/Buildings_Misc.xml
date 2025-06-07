@@ -78,6 +78,9 @@
       <li>ExoticMisc</li>
     </tradeTags>
     <tradeability>Sellable</tradeability>
+    <thingSetMakerTags>
+      <li>RewardStandardMidFreq</li>
+    </thingSetMakerTags>
     <inspectorTabs>
       <li>ITab_Storage</li>
     </inspectorTabs>
@@ -215,7 +218,8 @@
       </li>
     </comps>
     <thingCategories>
-      <li>BuildingsMisc</li>
+      <!-- Put it in the furniture tab in storage, but also allow it to be sold to/bought from traders as normal furniture. -->
+      <li>BuildingsFurniture</li>
     </thingCategories>
     <costList>
       <Steel>20</Steel>
