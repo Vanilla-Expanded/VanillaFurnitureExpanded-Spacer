@@ -202,6 +202,13 @@
           <li>Cleanliness</li>
         </clearStatCacheOnPowerChange>
       </li>
+      <li Class="VFECore.CompProperties_CustomCauseHediff_AoE">
+        <hediff>VFES_FreshAir</hediff>
+        <!-- If range is default (0) or negative, the range is infinite (unless limited by same room). -->
+        <checkInterval>300</checkInterval>
+        <hediffDuration>305</hediffDuration>
+        <worksOutside>false</worksOutside>
+      </li>
     </comps>
     <thingCategories>
       <li>BuildingsMisc</li>
@@ -212,6 +219,11 @@
       <ComponentIndustrial>1</ComponentIndustrial>
       <ComponentSpacer>1</ComponentSpacer>
     </costList>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <drawPlaceWorkersWhileInstallBlueprintSelected>true</drawPlaceWorkersWhileInstallBlueprintSelected>
+    <placeWorkers>
+      <li>VFECore.PlaceWorker_CompCustomCauseHediff_AoE</li>
+    </placeWorkers>
     <researchPrerequisites>
       <li>SpacerElectronics</li>
     </researchPrerequisites>
