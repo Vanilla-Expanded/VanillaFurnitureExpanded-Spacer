@@ -215,9 +215,6 @@
     <passability>PassThroughOnly</passability>
     <canOverlapZones>false</canOverlapZones>
     <minifiedDef>MinifiedThing</minifiedDef>
-    <thingCategories>
-      <li>BuildingsMisc</li>
-    </thingCategories>
     <placeWorkers>
       <li>PlaceWorker_ShowFacilitiesConnections</li>
     </placeWorkers>
