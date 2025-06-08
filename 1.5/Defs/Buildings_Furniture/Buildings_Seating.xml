@@ -97,7 +97,7 @@
       <li>Leathery</li>
     </stuffCategories>
     <researchPrerequisites>
-      <li>ComplexFurniture</li>
+      <li>SpacerFurniture</li>
     </researchPrerequisites>
     <costStuffCount>90</costStuffCount>
     <costList>
@@ -158,7 +158,7 @@
       <li>Leathery</li>
     </stuffCategories>
     <researchPrerequisites>
-      <li>ComplexFurniture</li>
+      <li>SpacerFurniture</li>
     </researchPrerequisites>
     <costStuffCount>150</costStuffCount>
     <costList>

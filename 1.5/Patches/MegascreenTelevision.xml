@@ -9,7 +9,7 @@
 				<value>
 					<designationCategory>Joy</designationCategory>
 					<researchPrerequisites>
-						<li>FlatscreenTelevision</li>
+						<li>SpacerElectronics</li>
 					</researchPrerequisites>
 					<constructionSkillPrerequisite>9</constructionSkillPrerequisite>
 				</value>

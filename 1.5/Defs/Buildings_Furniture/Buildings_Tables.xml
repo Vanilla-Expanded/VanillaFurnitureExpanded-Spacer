@@ -17,6 +17,9 @@
       <li Class="CompProperties_Breakdownable"/>
       <li Class="CompProperties_Flickable"/>
     </comps>
+    <researchPrerequisites>
+      <li>SpacerElectronics</li>
+    </researchPrerequisites>
     <tickerType>Normal</tickerType>
     <stuffCategories Inherit="False">
       <li>Woody</li>
@@ -66,9 +69,6 @@
       <Beauty>4</Beauty>
       <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">6</StyleDominance>
     </statBases>
-    <researchPrerequisites>
-      <li>SpacerFurniture</li>
-    </researchPrerequisites>
     <size>(1,1)</size>
     <costStuffCount>30</costStuffCount>
     <costList>
@@ -121,9 +121,6 @@
       <Beauty>16</Beauty>
       <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">6</StyleDominance>
     </statBases>
-    <researchPrerequisites>
-      <li>SpacerFurniture</li>
-    </researchPrerequisites>
     <size>(2,2)</size>
     <costStuffCount>120</costStuffCount>
     <costList>

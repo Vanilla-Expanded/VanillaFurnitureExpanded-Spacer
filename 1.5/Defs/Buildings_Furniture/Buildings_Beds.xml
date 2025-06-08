@@ -373,7 +373,7 @@
       <li>PlaceWorker_ShowFacilitiesConnections</li>
     </placeWorkers>
     <researchPrerequisites>
-      <li>ComplexFurniture</li>
+      <li>SpacerFurniture</li>
     </researchPrerequisites>
     <constructionSkillPrerequisite>7</constructionSkillPrerequisite>
     <designationCategory>Furniture</designationCategory>
