@@ -33,13 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Building_RepairStored.cs" />
-    <Compile Include="CompPassiveJoyTable.cs" />
-    <Compile Include="CompProperties_RepairStored.cs" />
-    <Compile Include="CompRepairStored.cs" />
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="CompProperties_RemoveGas.cs" />
-    <Compile Include="CompRemoveGas.cs" />
+    <Compile Include="Buildings\Building_RepairStored.cs" />
+    <Compile Include="Comps\CompPassiveJoyTable.cs" />
+    <Compile Include="Comps\CompProperties_RemoveGas.cs" />
+    <Compile Include="Comps\CompProperties_RepairStored.cs" />
+    <Compile Include="Comps\CompRemoveGas.cs" />
+    <Compile Include="Comps\CompRepairStored.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="0Harmony, Version=2.3.3.0, Culture=neutral, processorArchitecture=MSIL">
