@@ -29,6 +29,17 @@ public class CompRemoveGas : ThingComp
                     gasGrid[CellIndicesUtility.CellToIndex(parent.Position, parent.Map.Size.x)] &= Props.Mask;
                     parent.Map.mapDrawer.MapMeshDirty(pos, MapMeshFlagDefOf.Gas);
                 }
+
+                if (Props.removeAllThingDefGases)
+                {
+                    pos.GetGas(parent.Map)?.DeSpawn();
+                }
+                else if (Props.gasThingDefsToRemove != null)
+                {
+                    var gas = pos.GetGas(parent.Map);
+                    if (gas != null && Props.gasThingDefsToRemove.Contains(gas.def))
+                        gas.DeSpawn();
+                }
             }
         }
     }

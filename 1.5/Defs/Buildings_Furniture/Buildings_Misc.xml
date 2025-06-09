@@ -195,6 +195,7 @@
           <li>RotStink</li>
           <li>DeadlifeDust</li>
         </gasTypesToRemove>
+        <removeAllThingDefGases>true</removeAllThingDefGases>
       </li>
       <li Class="VFECore.CompProperties_StatsWhenPowered">
         <poweredStatOffsets>

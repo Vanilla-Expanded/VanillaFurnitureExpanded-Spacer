@@ -8,6 +8,10 @@ public class CompProperties_RemoveGas : CompProperties
 {
     public bool requiresIndoors = false;
     public List<GasType> gasTypesToRemove = null;
+
+    public bool removeAllThingDefGases = false;
+    public List<ThingDef> gasThingDefsToRemove = null;
+
     public uint Mask { get; protected set; } = uint.MaxValue;
 
     public CompProperties_RemoveGas() => compClass = typeof(CompRemoveGas);
@@ -34,16 +38,37 @@ public class CompProperties_RemoveGas : CompProperties
         foreach (var error in base.ConfigErrors(parentDef))
             yield return error;
 
-        if (gasTypesToRemove.NullOrEmpty())
-            yield return $"{gasTypesToRemove} has no elements, making this comp not do anything";
-        else
+        if (!gasTypesToRemove.NullOrEmpty())
         {
             var distinct = gasTypesToRemove.Distinct().ToList();
             if (distinct.Count != gasTypesToRemove.Count)
             {
                 gasTypesToRemove = distinct;
                 distinct.TrimExcess();
-                yield return $"{gasTypesToRemove} cannot be distinct";
+                yield return $"{parentDef.defName} has {nameof(CompProperties_RemoveGas)} with {gasTypesToRemove} that has repeated gas types.";
+            }
+        }
+
+        if (!gasThingDefsToRemove.NullOrEmpty())
+        {
+            if (removeAllThingDefGases)
+            {
+                yield return $"{parentDef.defName} has {nameof(CompProperties_RemoveGas)} with {nameof(removeAllThingDefGases)} set to true and non-empty {nameof(gasThingDefsToRemove)}, only one of those should be used.";
+            }
+
+            for (var i = gasThingDefsToRemove.Count - 1; i >= 0; i--)
+            {
+                var gasDef = gasThingDefsToRemove[i];
+                if (gasDef == null)
+                {
+                    gasThingDefsToRemove.RemoveAt(i);
+                    yield return $"{parentDef.defName} has {nameof(CompProperties_RemoveGas)} with {nameof(gasThingDefsToRemove)} that has an empty/null entry.";
+                }
+                else if (gasDef.category != ThingCategory.Gas)
+                {
+                    gasThingDefsToRemove.RemoveAt(i);
+                    yield return $"{parentDef.defName} has {nameof(CompProperties_RemoveGas)} with {nameof(gasThingDefsToRemove)} that contains a non-gas element ({nameof(ThingDef)}.{nameof(ThingDef.category)} is {nameof(gasDef.category)}, expected {ThingCategory.Gas}).";
+                }
             }
         }
     }
