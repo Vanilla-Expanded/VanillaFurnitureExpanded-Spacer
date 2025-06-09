@@ -40,6 +40,7 @@
     <Compile Include="Comps\CompProperties_RepairStored.cs" />
     <Compile Include="Comps\CompRemoveGas.cs" />
     <Compile Include="Comps\CompRepairStored.cs" />
+    <Compile Include="PerformanceFishCompatibility.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="0Harmony, Version=2.3.3.0, Culture=neutral, processorArchitecture=MSIL">

@@ -189,13 +189,20 @@
       <li Class="CompProperties_Flickable"/>
       <li Class="MFSpacer.CompProperties_RemoveGas">
         <requiresIndoors>true</requiresIndoors>
+        <!-- Current vanilla gas system -->
         <gasTypesToRemove>
           <li>BlindSmoke</li>
           <li>ToxGas</li>
           <li>RotStink</li>
           <li>DeadlifeDust</li>
         </gasTypesToRemove>
+        <!-- Old vanilla gas system, in case other mods are using it -->
+        <!-- If false, it also supports thingDefGasesToRemove property (list of ThingDefs). -->
         <removeAllThingDefGases>true</removeAllThingDefGases>
+        <!-- Performance Fish gas system (including Simple Custom Gas Framework). -->
+        <!-- If false, it also supports gasDefGasesToRemove property (list of Performance Fish/SCGF GasDefs). -->
+        <!-- If this option is false, all gases from gasTypesToRemove will be automatically applied to gasDefGasesToRemove. -->
+        <removeAllGasDefGases>true</removeAllGasDefGases>
       </li>
       <li Class="VFECore.CompProperties_StatsWhenPowered">
         <poweredStatOffsets>

@@ -21,12 +21,36 @@ public class CompRemoveGas : ThingComp
     {
         if (parent.Spawned && (powerTrader == null || powerTrader.PowerOn) && (!Props.requiresIndoors || !parent.IsOutside()))
         {
-            var gasGrid = GasDensityField(parent.Map.gasGrid);
+            uint[] gasGrid = null;
+            object[] parallelGasGrids = null;
+
+            if (PerformanceFishCompatibility.IsPerformanceFishActive)
+                parallelGasGrids = (object[])PerformanceFishCompatibility.ParallelGasGridsMethod(null, parent.Map.gasGrid);
+            else
+                gasGrid = GasDensityField(parent.Map.gasGrid);
+
             foreach (var pos in parent.OccupiedRect())
             {
-                if (gasGrid[CellIndicesUtility.CellToIndex(parent.Position, parent.Map.Size.x)] > 0u)
+                var cellIndex = CellIndicesUtility.CellToIndex(parent.Position, parent.Map.Size.x);
+
+                // PerformanceFish replaces vanilla gas system, so we need to use it to clear the vanilla gases.
+                // On top of that, this will work with non-vanilla gases.
+                if (parallelGasGrids != null)
                 {
-                    gasGrid[CellIndicesUtility.CellToIndex(parent.Position, parent.Map.Size.x)] &= Props.Mask;
+                    if (Props.removeAllGasDefGases)
+                    {
+                        for (var i = 0; i < parallelGasGrids.Length; i++)
+                            PerformanceFishCompatibility.SetDirectMethod(parallelGasGrids[i], cellIndex, (byte)0);
+                    }
+                    else if (Props.gasDefGasesToRemove != null)
+                    {
+                        for (var i = 0; i < Props.gasDefGasesToRemove.Count; i++)
+                            PerformanceFishCompatibility.SetDirectMethod(parallelGasGrids[Props.gasDefGasesToRemove[i].index], cellIndex, (byte)0);
+                    }
+                }
+                else if (gasGrid != null && gasGrid[cellIndex] > 0u)
+                {
+                    gasGrid[cellIndex] &= Props.Mask;
                     parent.Map.mapDrawer.MapMeshDirty(pos, MapMeshFlagDefOf.Gas);
                 }
 
@@ -34,10 +58,10 @@ public class CompRemoveGas : ThingComp
                 {
                     pos.GetGas(parent.Map)?.DeSpawn();
                 }
-                else if (Props.gasThingDefsToRemove != null)
+                else if (Props.thingDefGasesToRemove != null)
                 {
                     var gas = pos.GetGas(parent.Map);
-                    if (gas != null && Props.gasThingDefsToRemove.Contains(gas.def))
+                    if (gas != null && Props.thingDefGasesToRemove.Contains(gas.def))
                         gas.DeSpawn();
                 }
             }
