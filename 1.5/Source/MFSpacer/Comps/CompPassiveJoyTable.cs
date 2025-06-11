@@ -39,7 +39,7 @@ public class CompPassiveJoyTable : ThingComp
 
     private void TryGivePawnJoy(Pawn pawn)
     {
-        if (pawn is { health: not null, needs.joy: not null } && pawn.health.capacities.CapableOf(PawnCapacityDefOf.Sight))
+        if (pawn is { health: not null, needs: not null, needs.joy: not null, Drafted: false, pather: not null, pather.MovingNow: false } && pawn.health.capacities.CapableOf(PawnCapacityDefOf.Sight))
             pawn.needs.joy.GainJoy(parent.GetStatValue(StatDefOf.JoyGainFactor) * (JoyTickInterval * JoyTunings.BaseJoyGainPerHour / GenDate.TicksPerHour), parent.def.building.joyKind);
     }
 }
