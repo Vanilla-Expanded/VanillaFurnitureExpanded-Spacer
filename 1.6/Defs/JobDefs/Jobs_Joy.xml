@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <JobDef>
+    <defName>VFES_UseInteractiveTable</defName>
+    <driverClass>JobDriver_WatchBuilding</driverClass>
+    <reportString>using interactive table.</reportString>
+    <joyDuration>4000</joyDuration>
+    <joyMaxParticipants>8</joyMaxParticipants>
+    <joyKind>Television</joyKind>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <!-- The interactive table should already give a passive recreation to pawns sitting around it. -->
+    <joyGainRate>0</joyGainRate>
+  </JobDef>
+
+  <JoyGiverDef>
+    <defName>VFES_UseInteractiveTable</defName>
+    <giverClass>JoyGiver_InteractBuildingSitAdjacent</giverClass>
+    <baseChance>0.5</baseChance>
+    <requireChair>false</requireChair>
+    <thingDefs>
+      <li>Table_interactive_1x1c</li>
+      <li>Table_interactive_2x2c</li>
+    </thingDefs>
+    <jobDef>VFES_UseInteractiveTable</jobDef>
+    <joyKind>Television</joyKind>
+    <requiredCapacities>
+      <li>Sight</li>
+    </requiredCapacities>
+  </JoyGiverDef>
+
+</Defs>

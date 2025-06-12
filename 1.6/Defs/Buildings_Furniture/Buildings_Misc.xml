@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="FurnitureBase">
+    <defName>Shelf_RepairRack</defName>
+    <label>mechanite repair shelf</label>
+    <description>A high-tech shelf for storing apparel or weapons. Items stored on this shelf will benefit from nanoswarms of mechanites that will slowly repair any damage and deterioration. The process requires a large amount of power and takes a significant amount of time.</description>
+    <!-- The repair is now tied to the comp, rather than to the building itself. -->
+    <!-- The building class is optional, and only makes the comp know that an item was added/removed to instantly forbid the item and turn on/off the effecter. -->
+    <!-- If using a different thingClass, I'd recommend making a custom one that call CompRepairStored.Notify_ReceivedThing/Notify_LostThing where appropriate. -->
+    <thingClass>MFSpacer.Building_RepairStored</thingClass>
+    <graphicData>
+      <texPath>NewThings/Misc/RepairShelf</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <thingCategories Inherit="False">
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <costList>
+      <Plasteel>20</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+      <MechSerumHealer>1</MechSerumHealer>
+    </costList>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Mass>20</Mass>
+      <WorkToBuild>100000</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>0.5</Beauty>
+    </statBases>
+    <size>(1,1)</size>
+    <pathCost>50</pathCost>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>750</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Flickable" />
+      <li Class="MFSpacer.CompProperties_RepairStored">
+        <effecterDef>VFES_BlueSmoke</effecterDef>
+
+        <repairAmount>1</repairAmount>
+        <repairInterval>2500</repairInterval>
+      </li>
+    </comps>
+    <tickerType>Normal</tickerType>
+    <building>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <defaultStorageSettings>
+        <priority>Important</priority>
+        <filter>
+          <categories>
+            <li>Weapons</li>
+            <li>Apparel</li>
+          </categories>
+        </filter>
+      </defaultStorageSettings>
+      <fixedStorageSettings>
+        <filter>
+          <categories>
+            <li>Weapons</li>
+            <li>Apparel</li>
+          </categories>
+        </filter>
+      </fixedStorageSettings>
+    </building>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <tradeability>Sellable</tradeability>
+    <thingSetMakerTags>
+      <li>RewardStandardMidFreq</li>
+    </thingSetMakerTags>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+    <researchPrerequisites>
+      <li>SpacerElectronics</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <designationCategory>Misc</designationCategory>
+    <techLevel>Ultra</techLevel>
+  </ThingDef>
+
+  <ThingDef ParentName="LampBase">
+    <defName>Spacer_OutdoorLamp</defName>
+    <label>outdoor solar lamp</label>
+    <description>An electrical standing lamp that lights an area, good for large outdoor spaces, with a small solar panel mounted on top. Stores electrical charge during the day, when it’s off, and automatically turns on at night.</description>
+    <graphicData>
+      <graphicClass>VEF.Graphics.Graphic_DarklightSingle</graphicClass>
+      <texPath>NewThings/Light/SolarLamp</texPath>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <tickerType>Rare</tickerType>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>500</WorkToBuild>
+      <Mass>4</Mass>
+      <Flammability>1</Flammability>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">5</StyleDominance>
+    </statBases>
+    <costList>
+      <Steel>30</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <size>(1,1)</size>
+    <pathCost>14</pathCost>
+    <fillPercent>0.2</fillPercent>
+    <uiOrder>2992</uiOrder>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <compClass>VEF.Graphics.CompGlower_DirtyMapMesh</compClass>
+        <glowRadius>12</glowRadius>
+        <glowColor>(214,148,94,0)</glowColor>
+        <colorPickerEnabled>true</colorPickerEnabled>
+        <darklightToggle>true</darklightToggle>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Flickable" />
+      <li Class="VEF.Buildings.CompProperties_ScheduleExtended">
+        <minLight>0</minLight>
+        <maxLight>0.5</maxLight>
+        <offMessage>Off due to sufficient sunlight.</offMessage>
+
+        <disableUnderRoof>true</disableUnderRoof>
+        <disabledDueToRoofMessage>Off due to being under a roof.</disabledDueToRoofMessage>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_NotUnderRoof</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>SpacerElectronics</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
+    <designationCategory>Furniture</designationCategory>
+    <building>
+      <allowAutoroof>false</allowAutoroof>
+    </building>
+    <techLevel>Spacer</techLevel>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFES_AirPurifier</defName>
+    <label>air purifier</label>
+    <description>A compact, high-efficiency air purifier that filters out dust, allergens, smoke, and other unwanted particulates while circulating clean, scented air. Improves room cleanliness, slightly boosts mood, and enhances the overall environment.</description>
+    <graphicData>
+      <texPath>NewThings/Misc/AirPurifier</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <damageData>
+        <rect>(0.3,0,0.4,0.85)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(0.3, 0.17, 0.3)</volume>
+        <offset>(0,0,-0.25)</offset>
+      </shadowData>
+    </graphicData>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <fillPercent>0.2</fillPercent>
+    <pathCost>42</pathCost>
+    <passability>PassThroughOnly</passability>
+    <statBases>
+      <WorkToBuild>12000</WorkToBuild>
+      <MaxHitPoints>110</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <Mass>11</Mass>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>250</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="MFSpacer.CompProperties_RemoveGas">
+        <requiresIndoors>true</requiresIndoors>
+        <!-- Current vanilla gas system -->
+        <gasTypesToRemove>
+          <li>BlindSmoke</li>
+          <li>ToxGas</li>
+          <li>RotStink</li>
+          <li>DeadlifeDust</li>
+        </gasTypesToRemove>
+        <!-- Old vanilla gas system, in case other mods are using it -->
+        <!-- If false, it also supports thingDefGasesToRemove property (list of ThingDefs). -->
+        <removeAllThingDefGases>true</removeAllThingDefGases>
+        <!-- Performance Fish gas system (including Simple Custom Gas Framework). -->
+        <!-- If false, it also supports gasDefGasesToRemove property (list of Performance Fish/SCGF GasDefs). -->
+        <!-- If this option is false, all gases from gasTypesToRemove will be automatically applied to gasDefGasesToRemove. -->
+        <removeAllGasDefGases>true</removeAllGasDefGases>
+      </li>
+      <li Class="VEF.Buildings.CompProperties_StatsWhenPowered">
+        <poweredStatOffsets>
+          <Cleanliness>20</Cleanliness>
+        </poweredStatOffsets>
+        <onlyWorksIndoors>true</onlyWorksIndoors>
+        <!-- The room stats aren't recalculated unless something forces the game to re-cache it, -->
+        <!-- so we need a way to force it ourselves if we're changing a stat that affects a room. -->
+        <clearRoomCacheOnPowerChange>true</clearRoomCacheOnPowerChange>
+        <!-- Normally we wouldn't clear the stat, but since this stat directly affects -->
+        <clearStatCacheOnPowerChange>
+          <li>Cleanliness</li>
+        </clearStatCacheOnPowerChange>
+      </li>
+      <li Class="VEF.Buildings.CompProperties_CustomCauseHediff_AoE">
+        <hediff>VFES_FreshAir</hediff>
+        <!-- If range is default (0) or negative, the range is infinite (unless limited by same room). -->
+        <checkInterval>300</checkInterval>
+        <hediffDuration>305</hediffDuration>
+        <worksOutside>false</worksOutside>
+      </li>
+    </comps>
+    <thingCategories>
+      <!-- Put it in the furniture tab in storage, but also allow it to be sold to/bought from traders as normal furniture. -->
+      <li>BuildingsFurniture</li>
+    </thingCategories>
+    <costList>
+      <Steel>20</Steel>
+      <Plasteel>10</Plasteel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <drawPlaceWorkersWhileInstallBlueprintSelected>true</drawPlaceWorkersWhileInstallBlueprintSelected>
+    <placeWorkers>
+      <li>VEF.Buildings.PlaceWorker_CompCustomCauseHediff_AoE</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>SpacerElectronics</li>
+    </researchPrerequisites>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <designationCategory>Misc</designationCategory>
+    <techLevel>Spacer</techLevel>
+  </ThingDef>
+
+</Defs>

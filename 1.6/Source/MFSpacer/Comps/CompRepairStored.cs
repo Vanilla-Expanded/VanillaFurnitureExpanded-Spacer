@@ -100,7 +100,7 @@ public class CompRepairStored : ThingComp
 
     public virtual void Notify_LostThing(Thing newItem)
     {
-        if (effecter != null && !storage.GetSlotGroup().HeldThings.Any())
+        if (effecter != null && storage.GetSlotGroup().HeldThings.Count()<=0)
             DestroyEffecter();
     }
 

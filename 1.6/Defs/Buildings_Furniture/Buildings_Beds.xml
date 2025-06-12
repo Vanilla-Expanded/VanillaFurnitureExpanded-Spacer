@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef Name="VFES_AdvancedBedBase" ParentName="ArtableBedBase" Abstract="True">
+    <statBases>
+      <Flammability>1.0</Flammability>
+      <BedRestEffectiveness>1.2</BedRestEffectiveness>
+      <Comfort>0.95</Comfort>
+      <ImmunityGainSpeedFactor>1.2</ImmunityGainSpeedFactor>
+      <SurgerySuccessChanceFactor>1.1</SurgerySuccessChanceFactor>
+      <BirthRitualQualityOffset MayRequire="Ludeon.RimWorld.Biotech">5</BirthRitualQualityOffset>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>EndTable</li>
+          <li>Dresser</li>
+          <li MayRequire="VanillaExpanded.VFECore">Table_RoyalDresser</li>
+          <li MayRequire="VanillaExpanded.VFECore">Table_RoyalEndTable</li>
+          <li MayRequire="VanillaExpanded.VFECore">Table_Wardrobe</li>
+          <li MayRequire="VanillaExpanded.VFECore">VFE_RoyalWardrobe</li>
+          <li>Table_IlluminatedEndTable</li>
+          <li>Table_IlluminatedDresser</li>
+          <li>VFES_Table_IlluminatedWardrobe</li>
+          <li MayRequire="Ludeon.RimWorld.Ideology">SleepAccelerator</li>
+          <li MayRequire="VanillaExpanded.VFECore">Table_LightEndTable</li> <!-- TODO: Remove in 1.6 -->
+        </linkableFacilities>
+      </li>
+    </comps>
+    <building>
+      <bed_showSleeperBody>false</bed_showSleeperBody>
+      <bed_healPerDay>6</bed_healPerDay>
+      <paintable>true</paintable>
+    </building>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <pathCost>42</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <designationCategory>Furniture</designationCategory>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <tickerType>Normal</tickerType>
+  </ThingDef>
+
+  <ThingDef ParentName="VFES_AdvancedBedBase">
+    <defName>Bed_AdvBed</defName>
+    <label>advanced bed</label>
+    <description>A cutting-edge, fully motorized bed equipped with pressure-adjusting surfaces, biometric monitoring, and tech-assisted sleep tracking. It offers unmatched comfort, rest efficiency, and surgical support.</description>
+    <graphicData>
+      <texPath>NewThings/Furniture/Bed/AdvancedBed</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <castEdgeShadows>True</castEdgeShadows>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToBuild>5000</WorkToBuild>
+      <Mass>55</Mass>
+      <Beauty>4</Beauty>
+    </statBases>
+    <size>(1,2)</size>
+    <costStuffCount>60</costStuffCount>
+    <costList>
+      <Steel>25</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
+    <staticSunShadowHeight>0.17</staticSunShadowHeight>
+    <researchPrerequisites>
+      <li>SpacerFurniture</li>
+    </researchPrerequisites>
+    <techLevel>Spacer</techLevel>
+    <uiIconScale>1</uiIconScale>
+  </ThingDef>
+
+  <ThingDef ParentName="VFES_AdvancedBedBase">
+    <defName>Bed_AdvDoubleBed</defName>
+    <label>advanced double bed</label>
+    <description>A cutting-edge, fully motorized bed that fits two people, equipped with pressure-adjusting surfaces, biometric monitoring, and tech-assisted sleep tracking. It offers unmatched comfort, rest efficiency, and surgical support.</description>
+    <graphicData>
+      <texPath>NewThings/Furniture/Bed/AdvancedDoubleBed</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <castEdgeShadows>True</castEdgeShadows>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>9000</WorkToBuild>
+      <Mass>70</Mass>
+      <Beauty>8</Beauty>
+    </statBases>
+    <size>(2,2)</size>
+    <costStuffCount>100</costStuffCount>
+    <costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
+    <staticSunShadowHeight>0.17</staticSunShadowHeight>
+    <researchPrerequisites>
+      <li>SpacerFurniture</li>
+    </researchPrerequisites>
+    <techLevel>Spacer</techLevel>
+    <uiIconScale>1</uiIconScale>
+  </ThingDef>
+
+  <ThingDef ParentName="TableBase">
+    <defName>Table_IlluminatedEndTable</defName>
+    <label>illuminated end table</label>
+    <description>A sleek bedside table with an integrated soft-glow lamp. Must be placed directly adjacent to the head of the bed. Placing more than one end table near the same bed has no effect.</description>
+    <surfaceType>Item</surfaceType>
+    <graphicData>
+      <graphicClass>VEF.Graphics.Graphic_DarklightMulti</graphicClass>
+      <texPath>NewThings/Furniture/IlluminatedEndTable</texPath>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1,1)</drawSize>
+      <shadowData>
+        <volume>(0.45, 0.6, 0.45)</volume>
+      </shadowData>
+      <damageData>
+        <rectN>(0.16,0,0.68,1)</rectN>
+        <rectS>(0.16,0,0.68,1)</rectS>
+        <rectE>(0.19,0,0.55,1)</rectE>
+        <rectW>(0.23,0,0.55,1)</rectW>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+      <Mass>6</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>4</Beauty>
+    </statBases>
+    <stuffCategories Inherit="False">
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <pathCost>30</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <costStuffCount>50</costStuffCount>
+    <costList>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>SpacerFurniture</li>
+    </researchPrerequisites>
+    <uiOrder>2060</uiOrder>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <Comfort>0.05</Comfort>
+          <BedRestEffectiveness>0.02</BedRestEffectiveness>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+        <mustBePlacedAdjacentCardinalToBedHead>true</mustBePlacedAdjacentCardinalToBedHead>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>20</basePowerConsumption>
+        <powerUpgrades>
+          <li>
+            <researchProject>ColoredLights</researchProject>
+            <factor>0.5</factor>
+          </li>
+        </powerUpgrades>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Glower">
+        <compClass>VEF.Graphics.CompGlower_DirtyMapMesh</compClass>
+        <glowRadius>8.5</glowRadius>
+        <glowColor>(214,148,94,0)</glowColor>
+        <colorPickerEnabled>false</colorPickerEnabled>
+        <darklightToggle>true</darklightToggle>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtFurniture</nameMaker>
+        <descriptionMaker>ArtDescription_Furniture</descriptionMaker>
+        <minQualityForArtistic>Awful</minQualityForArtistic>
+      </li>
+    </comps>
+    <inspectorTabs>
+      <li>ITab_Art</li>
+    </inspectorTabs>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <castEdgeShadows>false</castEdgeShadows>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <designationCategory>Furniture</designationCategory>
+    <building>
+      <paintable>true</paintable>
+    </building>
+    <techLevel>Industrial</techLevel>
+  </ThingDef>
+
+  <ThingDef ParentName="ArtableFurnitureBase">
+    <defName>Table_IlluminatedDresser</defName>
+    <label>illuminated dresser</label>
+    <description>A sleek, modern dresser with an integrated soft-glow lamp. Gives a small comfort bonus to all nearby beds. Placing more than one dresser near the same bed has no effect.</description>
+    <graphicData>
+      <graphicClass>VEF.Graphics.Graphic_DarklightMulti</graphicClass>
+      <texPath>NewThings/Furniture/IlluminatedDresser</texPath>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2,1)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <pathCost>42</pathCost>
+    <stuffCategories Inherit="False">
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <costStuffCount>70</costStuffCount>
+    <costList>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <statBases>
+      <MaxHitPoints>130</MaxHitPoints>
+      <Mass>18</Mass>
+      <WorkToBuild>3000</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <Beauty>6</Beauty>
+    </statBases>
+    <size>(2,1)</size>
+    <designationHotKey>Misc12</designationHotKey>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>SpacerFurniture</li>
+    </researchPrerequisites>
+    <uiOrder>2070</uiOrder>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <Comfort>0.05</Comfort>
+          <BedRestEffectiveness>0.03</BedRestEffectiveness>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>6</maxDistance>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>25</basePowerConsumption>
+        <powerUpgrades>
+          <li>
+            <researchProject>ColoredLights</researchProject>
+            <factor>0.5</factor>
+          </li>
+        </powerUpgrades>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Glower">
+        <compClass>VEF.Graphics.CompGlower_DirtyMapMesh</compClass>
+        <glowRadius>8.5</glowRadius>
+        <glowColor>(214,148,94,0)</glowColor>
+        <colorPickerEnabled>false</colorPickerEnabled>
+        <darklightToggle>true</darklightToggle>
+      </li>
+    </comps>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <designationCategory>Furniture</designationCategory>
+    <building>
+      <paintable>true</paintable>
+    </building>
+    <techLevel>Industrial</techLevel>
+  </ThingDef>
+
+  <ThingDef ParentName="ArtableFurnitureBase">
+    <defName>VFES_Table_IlluminatedWardrobe</defName>
+    <label>illuminated wardrobe</label>
+    <description>A sleek, modern wardrobe with an integrated soft-glow lamp. Gives a small comfort and rest effectiveness bonus to all nearby beds. Placing more than one wardrobe near the same bed has no effect.</description>
+    <graphicData>
+      <graphicClass>VEF.Graphics.Graphic_DarklightMulti</graphicClass>
+      <texPath>NewThings/Furniture/IlluminatedWardrobe</texPath>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(3,3)</drawSize>
+      <damageData>
+        <rectN>(0,0,2,1.5)</rectN>
+        <rectS>(0,0,2,1.5)</rectS>
+        <rectE>(0,0,1,2.245)</rectE>
+        <rectW>(0,0,1,2.245)</rectW>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <costStuffCount>90</costStuffCount>
+    <stuffCategories Inherit="False">
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <costList>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <statBases>
+      <MaxHitPoints>160</MaxHitPoints>
+      <Mass>24</Mass>
+      <WorkToBuild>2500</WorkToBuild>
+      <Beauty>9</Beauty>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.6</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <pathCost>42</pathCost>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <size>(2,1)</size>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+    <uiOrder>2075</uiOrder>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <Comfort>0.05</Comfort>
+          <BedRestEffectiveness>0.03</BedRestEffectiveness>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>6</maxDistance>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>25</basePowerConsumption>
+        <powerUpgrades>
+          <li>
+            <researchProject>ColoredLights</researchProject>
+            <factor>0.5</factor>
+          </li>
+        </powerUpgrades>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Glower">
+        <compClass>VEF.Graphics.CompGlower_DirtyMapMesh</compClass>
+        <glowRadius>8.5</glowRadius>
+        <glowColor>(214,148,94,0)</glowColor>
+        <colorPickerEnabled>false</colorPickerEnabled>
+        <darklightToggle>true</darklightToggle>
+      </li>
+    </comps>
+    <building>
+      <paintable>true</paintable>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>SpacerFurniture</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+    <designationCategory>Furniture</designationCategory>
+    <techLevel>Industrial</techLevel>
+  </ThingDef>
+
+</Defs>
