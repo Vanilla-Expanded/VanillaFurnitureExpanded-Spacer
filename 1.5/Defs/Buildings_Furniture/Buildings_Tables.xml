@@ -1,106 +1,135 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <ThingDef ParentName="TableGatherSpotBase">
+
+  <ThingDef Name="VFES_InteractiveTableBase" ParentName="TableGatherSpotBase" Abstract="True">
+    <description>A sleek spacer table with an embedded smart display. When seated at this table, colonists enjoy passive television-style recreation alongside meals or work. People eat off tables when chairs are placed facing them.</description>
+    <building>
+      <joyKind>Television</joyKind>
+    </building>
+    <statBases>
+      <JoyGainFactor>0.6</JoyGainFactor>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <comps>
+      <li>
+        <compClass>MFSpacer.CompPassiveJoyTable</compClass>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+    <researchPrerequisites>
+      <li>SpacerElectronics</li>
+    </researchPrerequisites>
+    <tickerType>Normal</tickerType>
+    <stuffCategories Inherit="False">
+      <li>Woody</li>
+      <li>Metallic</li>
+    </stuffCategories>
+    <techLevel>Spacer</techLevel>
+  </ThingDef>
+
+  <ThingDef ParentName="VFES_InteractiveTableBase">
     <defName>Table_interactive_1x1c</defName>
     <label>interactive table (1x1)</label>
-    <description>A table for eating off of with interactive display for watching shows, playing games or taking notes on whilst eating. Fulfills recreation need when a pawn eats at this table and the table is powered.</description>
-    <thingClass>MFSpacer.Building_PassiveJoyTable</thingClass>
     <graphicData>
-      <texPath>Things/Furniture/TableInteractive1x1/TableInteractive1x1</texPath>
+      <texPath>NewThings/Furniture/TableInteractive1x1</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(1,1)</drawSize>
       <damageData>
+        <rectN>(0.02,0.16,0.96,0.81)</rectN>
+        <rectS>(0.02,0.26,0.96,0.71)</rectS>
+        <rectE>(0.09,0.16,0.82,0.81)</rectE>
+        <rectW>(0.09,0.16,0.82,0.81)</rectW>
         <cornerTL>Damage/Corner</cornerTL>
         <cornerTR>Damage/Corner</cornerTR>
         <cornerBL>Damage/Corner</cornerBL>
         <cornerBR>Damage/Corner</cornerBR>
       </damageData>
+      <shadowData>
+        <volume>(0.83, 0.2, 0.83)</volume>
+      </shadowData>
     </graphicData>
     <uiIconScale>0.8</uiIconScale>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>true</shortCircuitInRain>
-        <basePowerConsumption>100</basePowerConsumption>
+        <basePowerConsumption>120</basePowerConsumption>
       </li>
-      <li Class="CompProperties_Breakdownable" />
-      <li Class="CompProperties_Flickable" />
       <li Class="CompProperties_Glower">
-        <glowRadius>1</glowRadius>
-        <glowColor>(230,230,255,0)</glowColor>
+        <glowRadius>3.5</glowRadius>
+        <glowColor>(0,182,239,0)</glowColor>
       </li>
     </comps>
-    <tickerType>Normal</tickerType>
     <statBases>
-      <MaxHitPoints>50</MaxHitPoints>
-      <WorkToBuild>4000</WorkToBuild>
-      <Mass>10</Mass>
-      <Flammability>1.0</Flammability>
-      <Beauty>0.5</Beauty>
+      <MaxHitPoints>70</MaxHitPoints>
+      <WorkToBuild>3000</WorkToBuild>
+      <Mass>6</Mass>
+      <Beauty>4</Beauty>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">6</StyleDominance>
     </statBases>
-    <researchPrerequisites>
-      <li>SpacerFurniture</li>
-    </researchPrerequisites>
     <size>(1,1)</size>
-    <costStuffCount>60</costStuffCount>
+    <costStuffCount>30</costStuffCount>
     <costList>
-      <Steel>20</Steel>
-      <ComponentIndustrial>4</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
     </costList>
-    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
-    <designationCategory>AOMorefurniture</designationCategory>
+    <castEdgeShadows>false</castEdgeShadows>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+    <designationCategory>Furniture</designationCategory>
   </ThingDef>
 
-  <ThingDef ParentName="TableGatherSpotBase">
+  <ThingDef ParentName="VFES_InteractiveTableBase">
     <defName>Table_interactive_2x2c</defName>
     <label>interactive table (2x2)</label>
-    <description>A table for eating off of with interactive display for watching shows, playing games or taking notes on whilst eating. Fulfills recreation need when a pawn eats at this table and the table is powered.</description>
-    <thingClass>MFSpacer.Building_PassiveJoyTable</thingClass>
     <graphicData>
-      <texPath>Things/Furniture/TableInteractive2x2/TableInteractive2x2</texPath>
+      <texPath>NewThings/Furniture/TableInteractive2x2</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(2,2)</drawSize>
       <damageData>
+        <rectN>(0.02,0.16,1.96,1.81)</rectN>
+        <rectS>(0.02,0.26,1.96,1.71)</rectS>
+        <rectE>(0.09,0.16,1.82,1.81)</rectE>
+        <rectW>(0.09,0.16,1.82,1.81)</rectW>
         <cornerTL>Damage/Corner</cornerTL>
         <cornerTR>Damage/Corner</cornerTR>
         <cornerBL>Damage/Corner</cornerBL>
         <cornerBR>Damage/Corner</cornerBR>
       </damageData>
+      <shadowData>
+        <volume>(1.85, 0.2, 1.85)</volume>
+      </shadowData>
     </graphicData>
     <uiIconScale>0.9</uiIconScale>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>true</shortCircuitInRain>
-        <basePowerConsumption>200</basePowerConsumption>
+        <basePowerConsumption>280</basePowerConsumption>
       </li>
-      <li Class="CompProperties_Breakdownable" />
-      <li Class="CompProperties_Flickable" />
       <li Class="CompProperties_Glower">
-        <glowRadius>1</glowRadius>
-        <glowColor>(230,230,255,0)</glowColor>
+        <glowRadius>6.3</glowRadius>
+        <glowColor>(0,182,239,0)</glowColor>
       </li>
     </comps>
-    <tickerType>Normal</tickerType>
     <statBases>
-      <MaxHitPoints>120</MaxHitPoints>
+      <MaxHitPoints>280</MaxHitPoints>
       <WorkToBuild>12000</WorkToBuild>
-      <Mass>30</Mass>
-      <Flammability>1.0</Flammability>
-      <Beauty>4</Beauty>
+      <Mass>24</Mass>
+      <Beauty>16</Beauty>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">6</StyleDominance>
     </statBases>
-    <researchPrerequisites>
-      <li>SpacerFurniture</li>
-    </researchPrerequisites>
     <size>(2,2)</size>
-    <costStuffCount>100</costStuffCount>
+    <costStuffCount>120</costStuffCount>
     <costList>
-      <Steel>30</Steel>
-      <ComponentIndustrial>8</ComponentIndustrial>
+      <ComponentSpacer>4</ComponentSpacer>
     </costList>
+    <castEdgeShadows>false</castEdgeShadows>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
     <constructionSkillPrerequisite>7</constructionSkillPrerequisite>
-    <designationCategory>AOMorefurniture</designationCategory>
+    <designationCategory>Furniture</designationCategory>
   </ThingDef>
+
 </Defs>

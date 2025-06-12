@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <EffecterDef>
+    <defName>VFES_BlueSmoke</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <ticksBetweenMotes>55</ticksBetweenMotes>
+        <positionRadius>0.3</positionRadius>
+        <scale>1~1.25</scale>
+        <fleckDef>VFES_BlueSmoke</fleckDef>
+        <speed>0</speed>
+        <rotationRate>-30~30</rotationRate>
+      </li>
+    </children>
+  </EffecterDef>
+
+</Defs>

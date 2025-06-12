@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
+
   <ThingDef ParentName="ArtableFurnitureBase">
     <defName>Seat_AdvChair</defName>
     <label>advanced chair</label>
-    <description>An advanced chair that automatically changes in response to the contours of the sitter, giving optimal back support at all times and vastly improving comfort. The ultimate luxury.</description>
+    <description>A high-end, spacer-era seating solution with adaptive cushioning, posture calibration, and breathable smart fabrics. Designed for maximum long-term comfort and sleek modern interiors.</description>
     <graphicData>
-      <texPath>Things/Furniture/AdvancedChair/AdvancedChair</texPath>
+      <texPath>NewThings/Furniture/AdvancedChair</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(1,1)</drawSize>
@@ -21,25 +22,27 @@
     </graphicData>
     <altitudeLayer>Building</altitudeLayer>
     <statBases>
-      <MaxHitPoints>180</MaxHitPoints>
-      <WorkToBuild>12000</WorkToBuild>
-      <Mass>10</Mass>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToBuild>24000</WorkToBuild>
+      <Mass>25</Mass>
       <Flammability>1.0</Flammability>
       <Beauty>10</Beauty>
-      <Comfort>1.2</Comfort>
+      <Comfort>0.95</Comfort>
     </statBases>
     <socialPropernessMatters>true</socialPropernessMatters>
     <stuffCategories>
-      <li>Metallic</li>
-      <li>Woody</li>
+      <li>Fabric</li>
+      <li>Leathery</li>
     </stuffCategories>
-    <costStuffCount>40</costStuffCount>
+    <costStuffCount>100</costStuffCount>
+    <uiOrder>2410</uiOrder>
     <costList>
-      <Plasteel>60</Plasteel>
-      <ComponentIndustrial>3</ComponentIndustrial>
+      <Steel>30</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
     </costList>
     <pathCost>30</pathCost>
-    <fillPercent>0.35</fillPercent>
+    <fillPercent>0.4</fillPercent>
     <defaultPlacingRot>South</defaultPlacingRot>
     <building>
       <isSittable>true</isSittable>
@@ -49,6 +52,132 @@
     <researchPrerequisites>
       <li>SpacerFurniture</li>
     </researchPrerequisites>
-    <designationCategory>AOMorefurniture</designationCategory>
+    <designationCategory>Furniture</designationCategory>
+    <techLevel>Spacer</techLevel>
   </ThingDef>
+
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>VFES_ModernArmchair</defName>
+    <label>modern armchair</label>
+    <description>A sleek, spacer-era armchair. Built with memory foam, smart-fabric upholstery, and ergonomic design, it provides superior comfort and aesthetics.</description>
+    <graphicData>
+      <texPath>NewThings/Furniture/ModernArmchair</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <damageData>
+        <rectN>(0,0,1,0.703125)</rectN>
+        <rectS>(0.09375,0,0.84375,1)</rectS>
+        <rectE>(0,0,0.84375,0.625)</rectE>
+        <rectW>(0.15625,0,0.84375,0.625)</rectW>
+      </damageData>
+      <shadowData>
+        <volume>(0.4, 0.33, 0.4)</volume>
+      </shadowData>
+    </graphicData>
+    <uiIconScale>0.9</uiIconScale>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>130</MaxHitPoints>
+      <WorkToBuild>18000</WorkToBuild>
+      <Mass>20</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>6</Beauty>
+      <Comfort>0.95</Comfort>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities" MayRequire="VanillaExpanded.VFECore">
+        <linkableFacilities>
+          <li>VFE_CoffeeTable</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <researchPrerequisites>
+      <li>SpacerFurniture</li>
+    </researchPrerequisites>
+    <costStuffCount>90</costStuffCount>
+    <costList>
+      <Steel>20</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <pathCost>30</pathCost>
+    <fillPercent>0.40</fillPercent>
+    <designationHotKey>Misc8</designationHotKey>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+    <uiOrder>2420</uiOrder>
+    <building>
+      <isSittable>true</isSittable>
+      <destroySound>BuildingDestroyed_Soft_Small</destroySound>
+    </building>
+    <techLevel>Spacer</techLevel>
+  </ThingDef>
+
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>VFES_ModernCouch</defName>
+    <label>modern couch</label>
+    <description>A sleek, double-wide spacer-era couch. Memory foam, ergonomic design and smart-fabric upholstery provide maximum comfort.</description>
+    <graphicData>
+      <texPath>NewThings/Furniture/ModernCouch</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <damageData>
+        <rectN>(0,0,2,0.75)</rectN>
+        <rectS>(0,0,2,1)</rectS>
+        <rectE>(0,0,0.88,2)</rectE>
+        <rectW>(0.12,0,0.88,2)</rectW>
+      </damageData>
+      <shadowData>
+        <volume>(1.8, 0.33, 0.4)</volume>
+      </shadowData>
+    </graphicData>
+    <uiIconScale>0.9</uiIconScale>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>22000</WorkToBuild>
+      <Mass>60</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>12</Beauty>
+      <Comfort>0.95</Comfort>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities" MayRequire="VanillaExpanded.VFECore">
+        <linkableFacilities>
+          <li>VFE_CoffeeTable</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <researchPrerequisites>
+      <li>SpacerFurniture</li>
+    </researchPrerequisites>
+    <costStuffCount>150</costStuffCount>
+    <costList>
+      <Steel>30</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <pathCost>30</pathCost>
+    <fillPercent>0.40</fillPercent>
+    <size>(2,1)</size>
+    <designationHotKey>Misc8</designationHotKey>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <uiOrder>2430</uiOrder>
+    <building>
+      <isSittable>true</isSittable>
+      <multiSittable>true</multiSittable>
+      <destroySound>BuildingDestroyed_Soft_Small</destroySound>
+    </building>
+    <techLevel>Spacer</techLevel>
+  </ThingDef>
+
 </Defs>

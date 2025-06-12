@@ -2,7 +2,7 @@
 <Defs>
   <HediffDef>
     <defName>Bed_RefreshingSleep</defName>
-    <label>refreshing Sleep</label>
+    <label>refreshing sleep</label>
     <description>Exquisite bed rest due to advanced bed sleeping systems</description>
     <hediffClass>HediffWithComps</hediffClass>
     <initialSeverity>0.1</initialSeverity>

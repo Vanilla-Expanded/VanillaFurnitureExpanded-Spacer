@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
+
   <ThingDef ParentName="BuildingBase">
     <defName>UltrascreenTV</defName>
-    <label>ultrascreen television</label>
-    <description>A huge, curved, ultra-tech television. Viewers feel as if they are part of the action themselves. Very entertaining. Capable of picking up signal from the core worlds.</description>
+    <label>hyperscreen television</label>
+    <description>A colossal, ultra-definition entertainment wall spanning multiple panels. Designed for luxurious colonies, it delivers an overwhelming visual experience with rich sound and vibrant clarity. Streams archived ultranet broadcasts from long-dead satellites and local data arrays.</description>
     <graphicData>
-      <texPath>Things/Furniture/UltratechTV/UltratechTV</texPath>
+      <texPath>NewThings/Joy/HyperscreenTV</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shadowData>
-        <volume>(2.5, 0.6, 0.1)</volume>
+        <volume>(3.5, 0.6, 0.25)</volume>
         <offset>(0, 0, 0.2)</offset>
       </shadowData>
       <drawSize>(4,2)</drawSize>
@@ -28,21 +29,22 @@
       <li>RewardStandardQualitySuper</li>
     </thingSetMakerTags>
     <statBases>
-      <WorkToBuild>160000</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>90000</WorkToBuild>
+      <MaxHitPoints>140</MaxHitPoints>
       <Flammability>1.0</Flammability>
-      <Mass>16</Mass>
+      <Mass>20</Mass>
       <JoyGainFactor>1.8</JoyGainFactor>
+      <Beauty>5</Beauty>
     </statBases>
-    <pathCost>70</pathCost>
+    <pathCost>50</pathCost>
     <passability>PassThroughOnly</passability>
     <size>(4,2)</size>
     <building>
       <joyKind>Television</joyKind>
       <spawnedConceptLearnOpportunity>TVForSickPeople</spawnedConceptLearnOpportunity>
       <boughtConceptLearnOpportunity>TVForSickPeople</boughtConceptLearnOpportunity>
-      <watchBuildingStandDistanceRange>2~9</watchBuildingStandDistanceRange>
-      <watchBuildingStandRectWidth>10</watchBuildingStandRectWidth>
+      <watchBuildingStandDistanceRange>3~8</watchBuildingStandDistanceRange>
+      <watchBuildingStandRectWidth>8</watchBuildingStandRectWidth>
       <watchBuildingInSameRoom>true</watchBuildingInSameRoom>
     </building>
     <placeWorkers>
@@ -52,9 +54,14 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>true</shortCircuitInRain>
-        <basePowerConsumption>850</basePowerConsumption>
+        <basePowerConsumption>700</basePowerConsumption>
       </li>
-      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>VFES_TelevisionSpeaker</li>
+        </linkableFacilities>
+      </li>
     </comps>
     <tradeTags>
       <li>Television</li>
@@ -63,11 +70,171 @@
       <li>SpacerElectronics</li>
     </researchPrerequisites>
     <costList>
-      <Steel>300</Steel>
-      <ComponentIndustrial>16</ComponentIndustrial>
-      <ComponentSpacer>4</ComponentSpacer>
+      <Steel>240</Steel>
+      <ComponentIndustrial>20</ComponentIndustrial>
+      <ComponentSpacer>6</ComponentSpacer>
     </costList>
-    <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
-    <designationCategory>AOMorefurniture</designationCategory>
+    <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+    <designationCategory>Joy</designationCategory>
+    <techLevel>Spacer</techLevel>
   </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFES_WallMountedTelevision</defName>
+    <label>wall-mounted television</label>
+    <description>A sleek, high-tech flat-screen television. Its slim profile saves floor space while delivering the same rich color and clarity as traditional flat-screen units. It doesn’t have a huge viewing space, but can be mounted on walls.</description>
+    <graphicData>
+      <texPath>NewThings/Joy/WallMountedTV</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawOffsetNorth>(0,0,0.8)</drawOffsetNorth>
+      <drawOffsetSouth>(0,0,-0.8)</drawOffsetSouth>
+      <drawOffsetWest>(-0.8,0,0)</drawOffsetWest>
+      <drawOffsetEast>(0.8,0,0)</drawOffsetEast>
+      <drawSize>(2,1)</drawSize>
+      <damageData>
+        <enabled>false</enabled>
+        <!-- I've included the damage date that matches the graphic, if someone decides to enable it. -->
+        <rectN>(0.19,0.8,1.62,0.43)</rectN>
+        <rectS>(0.19,0,1.62,0.25)</rectS>
+        <rectE>(0.8,0.15,0.2,1.7)</rectE>
+        <rectW>(0,0.15,0.2,1.7)</rectW>
+      </damageData>
+    </graphicData>
+    <uiIconPath>NewThings/Joy/WallMountedTV_MenuIcon</uiIconPath>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <rotatable>true</rotatable>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <fillPercent>0.25</fillPercent>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <thingCategories>
+      <li>BuildingsJoy</li>
+    </thingCategories>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
+    <statBases>
+      <WorkToBuild>45000</WorkToBuild>
+      <MaxHitPoints>75</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <Mass>7</Mass>
+      <JoyGainFactor>1.4</JoyGainFactor>
+    </statBases>
+    <pathCost>0</pathCost>
+    <passability>Standable</passability>
+    <terrainAffordanceNeeded IsNull="True" />
+    <size>(2,1)</size>
+    <building>
+      <joyKind>Television</joyKind>
+      <spawnedConceptLearnOpportunity>TVForSickPeople</spawnedConceptLearnOpportunity>
+      <boughtConceptLearnOpportunity>TVForSickPeople</boughtConceptLearnOpportunity>
+      <watchBuildingStandDistanceRange>-1~-4</watchBuildingStandDistanceRange>
+      <watchBuildingStandRectWidth>4</watchBuildingStandRectWidth>
+      <watchBuildingInSameRoom>true</watchBuildingInSameRoom>
+      <isEdifice>false</isEdifice>
+      <isAttachment>true</isAttachment>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_WatchArea</li>
+      <li>VFECore.PlaceWorker_AttachedToWallMultiCell</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>330</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>VFES_TelevisionSpeaker</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <tradeTags>
+      <li>Television</li>
+    </tradeTags>
+    <researchPrerequisites>
+      <li>SpacerElectronics</li>
+    </researchPrerequisites>
+    <costList>
+      <Steel>130</Steel>
+      <ComponentIndustrial>16</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <designationCategory>Joy</designationCategory>
+    <techLevel>Spacer</techLevel>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFES_TelevisionSpeaker</defName>
+    <label>television speaker</label>
+    <description>A high-fidelity audio system designed to enhance the viewing experience of nearby televisions. When placed near a television, it links with the screen to deliver immersive sound, increasing the recreation gain of any colonist watching.</description>
+    <graphicData>
+      <texPath>NewThings/Joy/TelevisionSpeaker</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <damageData>
+        <rectN>(0.19,0,0.62,1)</rectN>
+        <rectS>(0.19,0,0.62,1)</rectS>
+        <rectE>(0.19,0,0.62,1)</rectE>
+        <rectW>(0.19,0,0.62,1)</rectW>
+      </damageData>
+      <shadowData>
+        <volume>(0.45, 0.25, 0.45)</volume>
+      </shadowData>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <statBases>
+      <Mass>10</Mass>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>1</Flammability>
+      <WorkToBuild>10000</WorkToBuild>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <JoyGainFactor>0.1</JoyGainFactor>
+        </statOffsets>
+        <maxSimultaneous>2</maxSimultaneous>
+        <maxDistance>6</maxDistance>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>250</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+    <pathCost>42</pathCost>
+    <fillPercent>0.3</fillPercent>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <canOverlapZones>false</canOverlapZones>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>SpacerElectronics</li>
+    </researchPrerequisites>
+    <costList>
+      <Steel>60</Steel>
+      <Plasteel>10</Plasteel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <thingCategories>
+      <!-- Put it in the furniture tab in storage, but also allow it to be sold to/bought from traders as normal furniture. -->
+      <!-- Alternatives would be either adding more trader entries, or diluting trader TV pool with the speaker. -->
+      <li>BuildingsFurniture</li>
+    </thingCategories>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <designationCategory>Joy</designationCategory>
+    <techLevel>Spacer</techLevel>
+  </ThingDef>
+
 </Defs>
