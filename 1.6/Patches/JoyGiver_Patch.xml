@@ -6,6 +6,7 @@
         </xpath>
     <value>
       <li>UltrascreenTV</li>
+      <li>VFES_WallMountedTelevision</li>
     </value>
   </Operation>
 </Patch>

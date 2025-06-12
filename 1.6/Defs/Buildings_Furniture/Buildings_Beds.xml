@@ -23,7 +23,6 @@
           <li>Table_IlluminatedDresser</li>
           <li>VFES_Table_IlluminatedWardrobe</li>
           <li MayRequire="Ludeon.RimWorld.Ideology">SleepAccelerator</li>
-          <li MayRequire="VanillaExpanded.VFECore">Table_LightEndTable</li> <!-- TODO: Remove in 1.6 -->
         </linkableFacilities>
       </li>
     </comps>
