@@ -45,11 +45,17 @@ public class CompRepairStored : ThingComp
             Log.Error($"{nameof(CompRepairStored)} has a parent that is not {nameof(Building_Storage)}");
     }
 
-    public override void CompTick()
+    public override void CompTickInterval(int delta) => TickInterval(delta);
+
+    public override void CompTickRare() => TickInterval(GenTicks.TickRareInterval);
+
+    public override void CompTickLong() => TickInterval(GenTicks.TickLongInterval);
+
+    protected virtual void TickInterval(int delta)
     {
         if (parent.Spawned)
         {
-            if ((powerComp == null || powerComp.PowerOn) && storage != null && parent.IsHashIntervalTick(Props.repairInterval))
+            if ((powerComp == null || powerComp.PowerOn) && storage != null && parent.IsHashIntervalTick(Props.repairInterval, delta))
             {
                 hasAnyThing = false;
 
@@ -100,9 +106,11 @@ public class CompRepairStored : ThingComp
 
     public virtual void Notify_LostThing(Thing newItem)
     {
-        if (effecter != null && storage.GetSlotGroup().HeldThings.Count()<=0)
+        if (effecter != null && !storage.GetSlotGroup().HeldThings.Any())
             DestroyEffecter();
     }
+
+    public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish) => DestroyEffecter();
 
     protected void MakeEffecter()
     {
@@ -112,8 +120,11 @@ public class CompRepairStored : ThingComp
 
     protected void DestroyEffecter()
     {
-        effecter?.Cleanup();
-        effecter = null;
+        if (effecter != null)
+        {
+            effecter.Cleanup();
+            effecter = null;
+        }
     }
 
     public override IEnumerable<Gizmo> CompGetGizmosExtra()

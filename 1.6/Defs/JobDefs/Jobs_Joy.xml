@@ -3,7 +3,8 @@
 
   <JobDef>
     <defName>VFES_UseInteractiveTable</defName>
-    <driverClass>JobDriver_WatchBuilding</driverClass>
+    <!-- JobDriver_WatchTelevision works the same as JobDriver_WatchBuilding, but has a power check. -->
+    <driverClass>JobDriver_WatchTelevision</driverClass>
     <reportString>using interactive table.</reportString>
     <joyDuration>4000</joyDuration>
     <joyMaxParticipants>8</joyMaxParticipants>
