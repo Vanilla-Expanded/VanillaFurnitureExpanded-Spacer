@@ -5,7 +5,7 @@ namespace MFSpacer;
 
 public class CompPassiveJoyTable : ThingComp
 {
-    private const int JoyTickInterval = 10;
+    private const int JoyTickInterval = 15;
 
     private CompPowerTrader powerTrader;
 
