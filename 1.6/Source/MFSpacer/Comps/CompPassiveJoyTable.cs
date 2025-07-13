@@ -11,7 +11,7 @@ public class CompPassiveJoyTable : ThingComp
 
     public override void CompTick()
     {
-        if (parent.IsHashIntervalTick(JoyTickInterval) && (powerTrader == null || powerTrader.PowerOn))
+        if (parent.Map != null && parent.IsHashIntervalTick(JoyTickInterval) && (powerTrader == null || powerTrader.PowerOn))
             HandlePawnJoy();
     }
 
