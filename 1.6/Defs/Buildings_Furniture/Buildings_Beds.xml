@@ -182,7 +182,7 @@
         <compClass>VEF.Graphics.CompGlower_DirtyMapMesh</compClass>
         <glowRadius>8.5</glowRadius>
         <glowColor>(214,148,94,0)</glowColor>
-        <colorPickerEnabled>false</colorPickerEnabled>
+        <colorPickerEnabled>true</colorPickerEnabled>
         <darklightToggle>true</darklightToggle>
       </li>
       <li Class="CompProperties_Art">
@@ -278,7 +278,7 @@
         <compClass>VEF.Graphics.CompGlower_DirtyMapMesh</compClass>
         <glowRadius>8.5</glowRadius>
         <glowColor>(214,148,94,0)</glowColor>
-        <colorPickerEnabled>false</colorPickerEnabled>
+        <colorPickerEnabled>true</colorPickerEnabled>
         <darklightToggle>true</darklightToggle>
       </li>
     </comps>
@@ -361,7 +361,7 @@
         <compClass>VEF.Graphics.CompGlower_DirtyMapMesh</compClass>
         <glowRadius>8.5</glowRadius>
         <glowColor>(214,148,94,0)</glowColor>
-        <colorPickerEnabled>false</colorPickerEnabled>
+        <colorPickerEnabled>true</colorPickerEnabled>
         <darklightToggle>true</darklightToggle>
       </li>
     </comps>
